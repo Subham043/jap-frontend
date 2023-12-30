@@ -72,6 +72,7 @@ const CartTableCard = ({ id, slug, featured_image_link, name, total_quantity_pri
                 className="cart-input"
                 type="text"
                 value={quantity}
+                readOnly={true}
             />
             <button
                 className="cart-plus"

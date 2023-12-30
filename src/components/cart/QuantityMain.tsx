@@ -32,7 +32,7 @@ const QuantityMain = ({ quantity, loading, incrementQuantity, decrementQuantity 
                 <input
                     className="cart-input"
                     type="text"
-                    readOnly
+                    readOnly={true}
                     value={quantity}
                 />
                 <button
