@@ -16,6 +16,7 @@ type WishlistContextType = {
   fetchWishlist: () => Promise<void>;
   updateWishlistData: (data: WishlistAPIType) => Promise<void>;
   removeWishlistItem: (product_id: number) => Promise<void>;
+  wishlistHandler: (id: number) => Promise<void>
 }
 
 const wishlistDefaultValues: WishlistContextType = {
@@ -25,6 +26,7 @@ const wishlistDefaultValues: WishlistContextType = {
   fetchWishlist: async () => {},
   updateWishlistData: async (data: WishlistAPIType) => {},
   removeWishlistItem: async (product_id: number) => {},
+  wishlistHandler: async (id: number) => {}
 };
 
 export const WishlistContext = createContext<WishlistContextType>(wishlistDefaultValues);
@@ -52,7 +54,7 @@ const WishlistProvider: React.FC<ChildrenType> = ({children}) => {
     );
     const { data:wishlist, isLoading:wishlistLoading, mutate:mutateWishlistData } = useSWR<WishlistAPIType>(status==='authenticated' ? api_routes.wishlist : null, fetcher);
     const { mutate } = useSWRConfig()
-    const {toastError} = useToast();
+    const {toastError, toastSuccess} = useToast();
     // const {toggleLoginModal} = useLogin();
 
     const fetchWishlist = async () => {await mutate(api_routes.wishlist)}
@@ -82,6 +84,28 @@ const WishlistProvider: React.FC<ChildrenType> = ({children}) => {
       }
     }
 
+    const wishlistHandler = async (id:number) => {  
+      if(status==='authenticated'){
+        try{
+            if(wishlist){
+                if([...wishlist.products.map(item=>item.id)].indexOf(id)<0){
+                    await updateWishlist([id, ...wishlist.products.map(item=>item.id)])
+                    toastSuccess('Product added to wishlist');
+                } else{
+                    const filteredWishlist = wishlist.products.filter(item=> item.id!=id);
+                    await updateWishlist([...filteredWishlist.map(item=>item.id)])
+                    toastSuccess('Product removed from wishlist');
+                }
+            }
+        }catch (error: any) {
+          console.log(error);
+        }
+      }else{
+        toastError('Please login to add product to wishlist');
+        // toggleLoginModal()
+      } 
+    }
+
     const removeWishlistItem = async(product_id: number) => {
       if(status==='authenticated' && wishlist){
         const wishlist_main = wishlist.products.map(item => item.id)
@@ -97,7 +121,7 @@ const WishlistProvider: React.FC<ChildrenType> = ({children}) => {
     }
   
     return (
-      <WishlistContext.Provider value={{wishlist, wishlistLoading, updateWishlist, updateWishlistData, fetchWishlist, removeWishlistItem}}>
+      <WishlistContext.Provider value={{wishlist, wishlistLoading, updateWishlist, updateWishlistData, fetchWishlist, removeWishlistItem, wishlistHandler}}>
           {children}
       </WishlistContext.Provider>
     );

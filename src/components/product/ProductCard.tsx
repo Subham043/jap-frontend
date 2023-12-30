@@ -1,9 +1,9 @@
 import { ProductSegmentState } from "@/helper/types";
 import Link from "next/link";
 import React, { useState } from "react";
-import GetRatting from "../rating/GetRatting";
 import { useCart } from "@/context/CartProvider";
 import QuantityMain from "../cart/QuantityMain";
+import { useWishlist } from "@/context/WishlistProvider";
 
 type Props = {
   product: ProductSegmentState;
@@ -13,6 +13,8 @@ const ProductCard = ({ product }: Props) => {
 
     const [loading, setLoading] = useState<boolean>(false);
     const {incrementProductQuantity, decrementProductQuantity, cart} = useCart();
+    const {wishlist, wishlistHandler} = useWishlist();
+    const [wishlistLoading, setWishlistLoading] = useState<boolean>(false);
     
     const incrementQuantity = async () => {
         try {
@@ -31,6 +33,17 @@ const ProductCard = ({ product }: Props) => {
         }
     };
 
+    const wishlistItemHandler = async (id:number) => {   
+        try{
+            setWishlistLoading(true)
+            if(product && wishlist){
+                await wishlistHandler(product.id)
+            }
+        }finally{
+            setWishlistLoading(false)
+        }
+    }
+
     return (
             <div className="bd-trending__item text-center mb-30 position-relative">
                 <div className="bd-trending__product-thumb border-5">
@@ -47,22 +60,25 @@ const ProductCard = ({ product }: Props) => {
                         </Link>
                     }
                     <div className="bd-product__action">
-                        <span
+                        <Link
+                        href={`/products/${product.slug}`}
                         data-toggle="tooltip"
                         data-placement="top"
                         title="Quick View"
-                        data-bs-toggle="modal"
-                        data-bs-target="#productmodal"
                         >
-                        <i className="fal fa-eye"></i>
-                        </span>
+                            <i className="fal fa-eye"></i>
+                        </Link>
                         <span
-                        className="wishlist-btn"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Quick Wishlist"
+                            className="wishlist-btn"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Quick Wishlist"
+                            onClick={()=>!wishlistLoading && wishlistItemHandler(product.id)}
                         >
-                        <i className="fal fa-heart"></i>
+                            {wishlistLoading ? 
+                            <div className="spinner-grow spinner-grow-sm text-success" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>: ((wishlist && [...wishlist.products.map(item => item.id)].indexOf(product.id)<0) ? <i className="fal fa-heart"></i> : <i className="fal fa-heart" style={{color: 'red'}}></i>)}
                         </span>
                     </div>
                 </div>
@@ -75,8 +91,8 @@ const ProductCard = ({ product }: Props) => {
                     <div className="bd-product__price">
                         {product?.price !== product?.discounted_price ? (
                         <span className="bd-product__old-price">
-                            <del>
-                            {`&#8377;${
+                            <del>&#8377;
+                            {`${
                                 product.price % 1 === 0
                                 ? `${product.price}.00`
                                 : product.price.toFixed(2)
@@ -98,12 +114,6 @@ const ProductCard = ({ product }: Props) => {
                         )}
                     </div>
 
-                    {/* <div className="bd-product__icon">
-                        <GetRatting averageRating={product.reviews.map(item => item.star).reduce(function (avg, value, _, { length }) {
-                            return avg + value / length;
-                        }, 0)} />
-                    </div> */}
-
                     <QuantityMain 
                         loading={loading} 
                         quantity={cart ? (cart.products.filter(item => item.id===product.id).length>0 ? cart.products.filter(item => item.id===product.id)[0].quantity : 0) : 0} 
@@ -111,23 +121,6 @@ const ProductCard = ({ product }: Props) => {
                         decrementQuantity={decrementQuantity}
                     />
                 </div>
-                {/* <div className="bd-product__tag">
-                {product.offer ? (
-                    <>
-                    <span className="tag-text danger-bg">
-                        
-                        {product.offerPersent}%
-                    </span>
-                    </>
-                ) : (
-                    <>
-                    <span className="tag-text theme-bg">
-                        
-                        {product.productStatus}
-                    </span>
-                    </>
-                )}
-                </div> */}
             </div>
     );
 };

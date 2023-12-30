@@ -81,6 +81,7 @@
 		visibility: hidden;
 		@include transition(.3s);
 		a,
+		button,
 		span {
 			height: 45px;
 			width: 45px;

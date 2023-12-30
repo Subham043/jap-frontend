@@ -8,13 +8,14 @@ type Props = {
     featured_image_link?: string;
     quantity: number;
     total_quantity_price: number;
+    discounted_price: number;
     loading: boolean;
     deleteHandler?: (data:number) => void
     incrementProductQuantity?: (product_id:number) => Promise<void>
     decrementProductQuantity?: (product_id:number) => Promise<void>
 }
 
-const CartTableCard = ({ id, slug, featured_image_link, name, total_quantity_price, quantity, loading, deleteHandler, incrementProductQuantity, decrementProductQuantity }: Props) => {
+const CartTableCard = ({ id, slug, featured_image_link, name, total_quantity_price, discounted_price, quantity, loading, deleteHandler, incrementProductQuantity, decrementProductQuantity }: Props) => {
     const [quantityLoading, setQuantityLoading] = useState<boolean>(false);
     
     const deleteClickHandler = () => {
@@ -53,7 +54,7 @@ const CartTableCard = ({ id, slug, featured_image_link, name, total_quantity_pri
       </Link>
     </td>
     <td className="product-price">
-      <span className="amount">&#8377;{total_quantity_price}</span>
+      <span className="amount">&#8377;{discounted_price}</span>
     </td>
     <td className="product-quantity text-center">
         <div className="product-quantity mt-10 mb-10">
@@ -96,6 +97,7 @@ const CartTableCard = ({ id, slug, featured_image_link, name, total_quantity_pri
             className="cartmini__del"
             onClick={() => deleteClickHandler()}
             disabled={loading}
+            style={{position: 'static'}}
         >
             {loading ? 
                 <div className="spinner-grow spinner-grow-sm text-success" role="status">

@@ -21,7 +21,7 @@ const CartSection = () => {
   
   return (
     <>
-      {cart && cart.products.length === 0 && (
+      {!cart || cart.products.length === 0 && (
         <div className="container">
           <div className="empty-text pt-100 pb-100 text-center">
             <h3>Your cart is empty</h3>
@@ -49,7 +49,7 @@ const CartSection = () => {
                      
                       {cart.products.map((item, index) => {
                         return(
-                          <CartTableCard id={item.id} slug={item.slug} name={item.name} featured_image_link={item.featured_image_link} quantity={item.quantity} total_quantity_price={item.total_quantity_price} deleteHandler={removeCartHandler} incrementProductQuantity={incrementProductQuantity} decrementProductQuantity={decrementProductQuantity} loading={loading} key={index}/>
+                          <CartTableCard id={item.id} discounted_price={item.discounted_price} slug={item.slug} name={item.name} featured_image_link={item.featured_image_link} quantity={item.quantity} total_quantity_price={item.total_quantity_price} deleteHandler={removeCartHandler} incrementProductQuantity={incrementProductQuantity} decrementProductQuantity={decrementProductQuantity} loading={loading} key={index}/>
                         )
                       }
                         
@@ -60,10 +60,25 @@ const CartSection = () => {
                 <div className="row justify-content-center">
                   <div className="col-md-5 ml-auto">
                     <div className="cart-page-total">
-                      <h2>Cart totals</h2>
+                      <h2 className="text-center">Cart totals</h2>
                       <ul className="mb-20">
                         <li>
-                          Subtotal <span>&#8377; {cart.total_price_with_coupon_dicount}</span>
+                          Subtotal <span>&#8377; {cart.sub_total}</span>
+                        </li>
+                        <li>
+                          Total Discount <span>- &#8377; {cart.total_discount}</span>
+                        </li>
+                        <li>
+                          GST <span>+ &#8377; {cart.gst_charge}</span>
+                        </li>
+                        <li>
+                          Delivery Charge <span>+ &#8377; {cart.delivery_charge}</span>
+                        </li>
+                        <li>
+                          Cumulative Total <span>&#8377; {cart.sub_total}</span>
+                        </li>
+                        <li>
+                          Coupon Discount <span>- &#8377; {cart.coupon_discount}</span>
                         </li>
                         <li>
                           Total <span>&#8377; {cart.total_price_with_coupon_dicount}</span>
@@ -73,14 +88,14 @@ const CartSection = () => {
                         <Link className="bd-fill__btn" href="/checkout">
                           Proceed to checkout
                         </Link>
-                        <button
+                        {/* <button
                           className="bd-unfill__btn mx-1"
                           name="update_cart"
                           type="submit"
                           // onClick={removeAllProduct}
                         >
                           Clear cart
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>

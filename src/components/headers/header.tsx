@@ -12,10 +12,12 @@ import SidebarWishlist from "./SidebarWishlist";
 import { useGlobalContext } from "@/context/AppProvider";
 import { useSession } from "next-auth/react";
 import { useCart } from "@/context/CartProvider";
+import { useWishlist } from "@/context/WishlistProvider";
 
 const Header = () => {
   const { status } = useSession();
   const {cart } = useCart();
+  const {wishlist } = useWishlist();
   const { setShowSidebar, setOpenCart, setOpenWishlist } = useGlobalContext();
   const safeSetShowSidebar = setShowSidebar || (() => { });
   useEffect(() => {
@@ -92,7 +94,7 @@ const Header = () => {
                             <WishlistIcon />
                           </span>
                           <span className="bd-action__item-number wishlist-count">
-                            0
+                            {wishlist ? wishlist.products.length :  0}
                           </span>
                         </div>
                       </div>

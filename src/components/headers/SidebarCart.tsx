@@ -57,7 +57,7 @@ const SidebarCart = () => {
                   <div className="cartmini__checkout">
                     <div className="cartmini__checkout-title mb-30">
                       <h4>Subtotal:</h4>
-                      <span className="subtotal-price">&#8377; {cart.total_price_with_coupon_dicount}</span>
+                      <span className="subtotal-price">&#8377; {cart.sub_total}</span>
                     </div>
                     <div className="cartmini__checkout-btn">
                       <Link onClick={() => setOpenCart(false)} className="bd-fill__btn w-100" href="/cart">

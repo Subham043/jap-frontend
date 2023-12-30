@@ -1,11 +1,26 @@
 ;
 import { useGlobalContext } from "@/context/AppProvider";
-import Image from "next/image";
+import { useWishlist } from "@/context/WishlistProvider";
+import { useToast } from "@/hooks/useToast";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import WishlistProductCard from "../wishlist/WishlistProductCard";
 
 const SidebarWishlist = () => {
+  const [loading, setLoading] = useState(false);
   const { openWishlist, setOpenWishlist } = useGlobalContext();
+  const {wishlist, removeWishlistItem} = useWishlist();
+  const {toastSuccess} = useToast();
+
+  const removeWishlistHandler = async(product_id:number) => {  
+    try{
+      setLoading(true)
+      await removeWishlistItem(product_id);
+      toastSuccess('Item removed from cart')
+    }finally{
+      setLoading(false)
+    }
+  }
   
   return (
     <>
@@ -28,75 +43,19 @@ const SidebarWishlist = () => {
                 <i className="fal fa-times"></i>
               </button>
             </div>
-            {/* <div className="cartmini__widget">
-              {cartProducts.length ? (
+            <div className="cartmini__widget">
+              {wishlist && wishlist.products.length ? (
                 <>
                   <div className="cartmini__inner">
                     <ul>
-                      {cartProducts.map((item, index) => {
-                        const productPrice =
-                          (item.price ?? 0) * (item.totalCard ?? 0);
+                      {wishlist.products.map((item, index) => {
                         return (
-                          <li key={index}>
-                            <div className="cartmini__thumb">
-                              <Link href={`/products/${item._id}`}>
-                                <Image
-                                  width={50}
-                                  height={100}
-                                  style={{ width: "100%", height: "auto" }}
-                                  src={item.img}
-                                  alt=""
-                                />
-                              </Link>
-                            </div>
-                            <div className="cartmini__content">
-                              <h5>
-                                <Link href={`/products/${item._id}`}>
-                                  {item.productName}
-                                </Link>
-                              </h5>
-                              <div className="product-quantity mt-10 mb-10">
-                                <span
-                                  className="cart-minus"
-                                  onClick={() => handDecressCart(item)}
-                                >
-                                  -
-                                </span>
-                                <input
-                                  className="cart-input"
-                                  type="text"
-                                  onChange={handleChange}
-                                  value={item.totalCard}
-                                />
-                                <span
-                                  className="cart-plus"
-                                  onClick={() => handleAddToCart(item)}
-                                >
-                                  +
-                                </span>
-                              </div>
-                              <div className="product__sm-price-wrapper">
-                                <span className="product__sm-price">
-                                  ${productPrice}
-                                </span>
-                              </div>
-                            </div>
-                            <span
-                              className="cartmini__del"
-                              onClick={() => handleDelteProduct(item)}
-                            >
-                              <i className="fal fa-times"></i>
-                            </span>
-                          </li>
+                          <WishlistProductCard product={item} loading={loading} deleteHandler={removeWishlistHandler} key={index} />
                         );
                       })}
                     </ul>
                   </div>
                   <div className="cartmini__checkout">
-                    <div className="cartmini__checkout-title mb-30">
-                      <h4>Subtotal:</h4>
-                      <span className="subtotal-price">${totalPrice}</span>
-                    </div>
                     <div className="cartmini__checkout-btn">
                       <Link
                         onClick={() => setOpenWishlist(false)}
@@ -115,7 +74,7 @@ const SidebarWishlist = () => {
                   </p>
                 </>
               )}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
