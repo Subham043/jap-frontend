@@ -47,3 +47,8 @@
 #ReactSimpleImageViewer{
     z-index: 9999;
 }
+
+.product-card-main-btn{
+    padding: 0 15px !important;
+    height: 35px !important;
+}

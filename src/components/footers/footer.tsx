@@ -10,7 +10,7 @@ import visa from "../../../public/assets/img/icon/visa.png";
 import logo from "../../../public/assets/img/logo/new-logo.png";
 import android from "../../../public/assets/img/playstore.png";
 import ios from "../../../public/assets/img/applestore.png";
-import { categoryData } from "./category-data";
+
 const Footer = () => {
   
   return (

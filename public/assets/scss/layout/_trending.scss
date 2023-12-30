@@ -29,6 +29,12 @@
 			@media #{$xs,$sm,$md,$lg,$xl}{
 			padding: 35px 20px;
 		  }
+		  &>a{
+			&>img{
+				height: 200px !important;
+				object-fit: cover;
+			}
+		  }
 		}
 	}
 }

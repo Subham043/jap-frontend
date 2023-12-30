@@ -9,6 +9,7 @@ import { ProductSegmentState } from "@/helper/types";
 import useSWR from "swr";
 import { axiosPublic } from "../../../axios";
 import { api_routes } from "@/helper/routes";
+import ProductCard from "../product/ProductCard";
 
 const PAGE_SIZE = 8;
 
@@ -92,105 +93,7 @@ const  ProductSlider = ({title, segment}:Props) => {
                                   return (
                                     <SwiperSlide key={index}>
                                       <div className="swiper-slides">
-                                        <div className="bd-product__item text-center p-relative mb-30">
-                                          <div className="bd-product__thumb w-img">
-                                            {item.featured_image_link && <Link
-                                              href={`/products/${item.slug}`}
-                                            >
-                                              <img
-                                                width={500}
-                                                height={500}
-                                                style={{
-                                                  width: "100%",
-                                                  height: "auto",
-                                                }}
-                                                src={item.featured_image_link}
-                                                alt="product-img"
-                                              />
-                                            </Link>}
-                                            <div className="bd-product__action">
-                                              <span
-                                                className="cart-btn"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Quick Shop"
-                                              >
-                                                <i className="fal fa-cart-arrow-down"></i>
-                                              </span>
-                                              <span
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Quick View"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#productmodal"
-                                              >
-                                                <i className="fal fa-eye"></i>
-                                              </span>
-                                              <span
-                                                className="wishlist-btn"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Quick Wishlist"
-                                              >
-                                                <i className="fal fa-heart"></i>
-                                              </span>
-                                            </div>
-                                          </div>
-                                          <div className="bd-product__content">
-                                            <h4 className="bd-product__title">
-                                              <Link
-                                                href={`/products/${item.slug}`}
-                                              >
-                                                {item.name}
-                                              </Link>
-                                            </h4>
-                                            <div className="bd-product__price">
-                                              {/* {item?.offer === true ? (
-                                                <span className="bd-product__old-price">
-                                                  <del>
-                                                    {`$${
-                                                      item?.oldPrice % 1 === 0
-                                                        ? `${item?.oldPrice}.00`
-                                                        : item?.oldPrice.toFixed(2)
-                                                    }`}
-                                                  </del>
-                                                </span>
-                                              ) : (
-                                                <></>
-                                              )} */}
-
-                                              {item.discounted_price % 1 === 0 ? (
-                                                <span className="bd-product__new-price">${`${item.discounted_price}.00`}</span>
-                                              ) : (
-                                                <span className="bd-product__new-price">
-                                                  ${item.discounted_price.toFixed(2)}
-                                                </span>
-                                              )}
-                                            </div>
-                                            <div className="bd-product__icon">
-                                              {/* <GetRatting
-                                                averageRating={item.averageRating}
-                                              /> */}
-                                            </div>
-                                          </div>
-                                          {/* <div className="bd-product__tag">
-                                            {item?.offer ? (
-                                              <>
-                                                <span className="tag-text danger-bg">
-                                                  
-                                                  {item.offerPersent}%
-                                                </span>
-                                              </>
-                                            ) : (
-                                              <>
-                                                <span className="tag-text theme-bg">
-                                                  
-                                                  {item?.productStatus}
-                                                </span>
-                                              </>
-                                            )}
-                                          </div> */}
-                                        </div>
+                                        <ProductCard product={item} />
                                       </div>
                                     </SwiperSlide>
                                   );

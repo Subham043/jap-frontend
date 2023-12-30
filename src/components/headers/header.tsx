@@ -1,4 +1,3 @@
-;
 import Link from "next/link";
 import React, { useEffect } from "react";
 import HeaderTopTwo from "./header-top-two";
@@ -12,9 +11,11 @@ import SidebarCart from "./SidebarCart";
 import SidebarWishlist from "./SidebarWishlist";
 import { useGlobalContext } from "@/context/AppProvider";
 import { useSession } from "next-auth/react";
+import { useCart } from "@/context/CartProvider";
 
 const Header = () => {
   const { status } = useSession();
+  const {cart } = useCart();
   const { setShowSidebar, setOpenCart, setOpenWishlist } = useGlobalContext();
   const safeSetShowSidebar = setShowSidebar || (() => { });
   useEffect(() => {
@@ -76,7 +77,7 @@ const Header = () => {
                             <CartIcon />
                           </span>
                           <span className="bd-action__item-number cart-count">
-                            0
+                            {cart ? cart.products.length : 0}
                           </span>
                         </div>
                       </div>

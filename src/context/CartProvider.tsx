@@ -6,6 +6,7 @@ import useSWR, { useSWRConfig } from 'swr'
 import { useToast } from "../hooks/useToast";
 // import { useLogin } from "./LoginProvider";
 import { useSession } from "next-auth/react";
+import useAxiosPrivate from "@/hooks/useAxiosPrivate";
 
 type CartUpdateDataType = {
   product_id: number,
@@ -42,6 +43,7 @@ export const useCart = () => useContext(CartContext);
 const CartProvider: React.FC<ChildrenType> = ({children}) => {
     const { status, data: session } = useSession();
     const {toastError, toastSuccess} = useToast();
+    const axiosPrivate = useAxiosPrivate();
     // const {toggleLoginModal} = useLogin();
 
     const fetcher = useCallback(
@@ -78,7 +80,7 @@ const CartProvider: React.FC<ChildrenType> = ({children}) => {
     const updateCart = async (data: CartUpdateDataType[]|[]) => {
       if(status==='authenticated'){
         try {
-          const response = await axiosPublic.post(api_routes.cart, data.length>0 ? {data:data}: {});
+          const response = await axiosPrivate.post(api_routes.cart, data.length>0 ? {data:data}: {});
           await mutateCartData(response.data.cart);
         } catch (error: any) {
           console.log(error);
