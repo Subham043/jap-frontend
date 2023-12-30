@@ -49,8 +49,9 @@ export default function AccountLayout({ children }: ChildrenType) {
                                 </Link>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button
-                                    className="nav-link"
+                                <Link
+                                    href='/account/orders'
+                                    className={router.pathname == "/account/orders" ? "nav-link active" : "nav-link"}
                                     id="history-tab"
                                     data-bs-toggle="tab"
                                     data-bs-target="#history"
@@ -60,7 +61,7 @@ export default function AccountLayout({ children }: ChildrenType) {
                                     aria-selected="false"
                                 >
                                 <i className="fas fa-cart-plus"></i> Orders
-                                </button>
+                                </Link>
                             </li>
 
                             <li className="nav-item" role="presentation">

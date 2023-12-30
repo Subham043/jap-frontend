@@ -103,7 +103,7 @@ const Header = () => {
                   <div className="bd-action__item d-sm-flex  align-items-center">
                     <div className="bd-action__cart">
                       <div className="bd-action__cart-icon">
-                        <Link className="header-author-img user-link" href={status === 'authenticated' ? "/profile" : "/auth/login"}>
+                        <Link className="header-author-img user-link" href={status === 'authenticated' ? "/account/profile" : "/auth/login"}>
                           <Image
                             src={userIcon}
                             width={50}
