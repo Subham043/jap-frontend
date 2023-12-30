@@ -8,6 +8,8 @@ import * as yup from "yup";
 import { useToast } from "@/hooks/useToast";
 import useAxiosPrivate from "@/hooks/useAxiosPrivate";
 import { api_routes } from "@/helper/routes";
+import useRazorpay from "react-razorpay";
+import { Order } from "@/helper/types";
 
 const schema = yup
   .object({
@@ -35,6 +37,7 @@ const CheckOutMain = () => {
   const {toastSuccess, toastError} = useToast();
   const [loadingCheckout, setLoadingCheckout] = useState(false);
   const axiosPrivate = useAxiosPrivate();
+  const [Razorpay] = useRazorpay();
 
   const {
     handleSubmit,
@@ -78,13 +81,13 @@ const CheckOutMain = () => {
           billing_address_1: "",
           mode_of_payment: "",
         });
-        // await updateCart([])
+        await updateCart([]);
         // history.push({
         //   pathname: `/orders/${response.data.order.receipt}`,
         //   state: {success: true}
         // })
       }else{
-        // loadRazorpay(response.data.order.payment_url, response.data.order.receipt);
+        loadRazorpay(response.data.order as Order);
       }
     } catch (error: any) {
       
@@ -155,6 +158,63 @@ const CheckOutMain = () => {
       setLoadingCheckout(false);
     }
   };
+
+  const loadRazorpay = (order:Order) => {
+    const options = {
+      key: 'rzp_test_C6y0UqyRMkEWqB', // Enter the Key ID generated from the Dashboard
+      amount: (order.total_price_with_coupon_dicount * 100).toString(), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      currency: "INR",
+      name: "JAP",
+      description: "Payment For Order Reciept: " + order.receipt,
+      image: "https://jap.bio/assets/img/logo/new-logo.png",
+      order_id: order.razorpay_order_id ? order.razorpay_order_id : '', //This is a sample Order ID. Pass the `id` obtained in the response of createOrder().
+      handler: function (response:any) {
+        verifyOnlinePayment({
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_order_id: response.razorpay_order_id,
+          razorpay_signature: response.razorpay_signature,
+        })
+      },
+      prefill: {
+        name: order.billing_first_name + ' ' + order.billing_last_name,
+        email: order.billing_email,
+        contact: (order.billing_phone).toString(),
+      },
+      theme: {
+        color: "#699c47",
+      },
+    };
+
+    const rzp1 = new Razorpay(options);
+    rzp1.open();
+  }
+
+  const verifyOnlinePayment = async(data:{razorpay_order_id:string, razorpay_payment_id:string, razorpay_signature:string}) => {
+    setLoadingCheckout(true);
+    try {
+      const response = await axiosPrivate.post(api_routes.place_order_payment_verify, {...data});
+      toastSuccess(response.data.message);
+      reset({
+        billing_first_name: "",
+        billing_last_name: "",
+        billing_email: "",
+        billing_phone: "",
+        billing_country: "",
+        billing_state: "",
+        billing_city: "",
+        billing_pin: "",
+        billing_address_1: "",
+        mode_of_payment: "",
+      });
+      await updateCart([]);
+    } catch (error: any) {
+      if (error?.response?.data?.message) {
+        toastError(error?.response?.data?.message);
+      }
+    } finally {
+      setLoadingCheckout(false);
+    }
+  }
 
   const selectCountryHandler = (item: {categoryName: string}, name: string) => setValue('billing_country', item.categoryName);
   const selectPaymentModeHandler = (item: {categoryName: string}, name: string) => setValue('mode_of_payment', item.categoryName);
