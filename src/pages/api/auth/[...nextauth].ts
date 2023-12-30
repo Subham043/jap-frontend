@@ -82,10 +82,10 @@ export const authOptions: NextAuthOptions = {
         }
     },
     pages: {
-        signIn: "/login",
-        newUser: "/register", // New users will be directed here on first sign in (leave the property out if not of interest)
+        signIn: "/auth/login",
+        newUser: "/auth/register", // New users will be directed here on first sign in (leave the property out if not of interest)
         // signOut: "/signout",
-        error: "/login", // Error code passed in query string as ?error=
+        error: "/auth/login", // Error code passed in query string as ?error=
         // verifyRequest: "/verify-request", // (used for check email message)
     },
     session: {
