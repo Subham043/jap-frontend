@@ -21,7 +21,7 @@ const LoginMain = () => {
   const {toastError, toastSuccess} = useToast();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/profile";
+  const callbackUrl = searchParams.get("callbackUrl") || "/account/profile";
 
   const {
     handleSubmit,
