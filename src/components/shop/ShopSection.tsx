@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ShopSidebarCategories from "./ShopSidebarCategories";
 import GridViewProduct from "./GridViewProduct";
 import ShopSidebarRetting from "./ShopSidebarRetting";
@@ -11,6 +11,7 @@ import useSWRInfinite from "swr/infinite";
 import { api_routes } from "@/helper/routes";
 import {debounce} from "lodash";
 import { segments } from "@/helper/constants";
+import { useSearchParams } from "next/navigation";
 
 const PAGE_SIZE = 20;
 
@@ -20,10 +21,13 @@ const productFetcher = async (url: string) => {
 };
 
 const ShopSection = () => {
+  const searchParams = useSearchParams();
   const [searchValue, setSearchValue] = useState<string>("");
-  const [segment, setSegment] = useState<string>('')
+  const [segment, setSegment] = useState<string>(searchParams.get('filter') ? `&filter[${searchParams.get('filter')}]=true`: '')
+  const [segmentDefault, setSegmentDefault] = useState<number>(segments.findIndex(item => item.api===`&filter[${searchParams.get('filter')}]=true`)<0 ? 0 : segments.findIndex(item => item.api===`&filter[${searchParams.get('filter')}]=true`))
   const [categorySelected, setCategorySelected] = useState<string>('')
   const [ratingSelected, setRatingSelected] = useState<string>('')
+  
   
   const getProductKey = useCallback((pageIndex:any, previousPageData:any) => {
       if (previousPageData && previousPageData.length===0) return null;
@@ -83,7 +87,7 @@ const ShopSection = () => {
                     <div className="bd-sort__type-filter">
                       <NiceSelect
                         options={segments}
-                        defaultCurrent={0}
+                        defaultCurrent={segmentDefault}
                         onChange={selectHandler}
                         name="sorting-list"
                         setapiEndPoint={setSegment}

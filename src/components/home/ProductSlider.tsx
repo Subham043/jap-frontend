@@ -7,6 +7,7 @@ import useSWR from "swr";
 import { axiosPublic } from "../../../axios";
 import { api_routes } from "@/helper/routes";
 import ProductCard from "../product/ProductCard";
+import Link from "next/link";
 
 const PAGE_SIZE = 8;
 
@@ -114,9 +115,9 @@ const  ProductSlider = ({title, segment}:Props) => {
               )}
             </div>
             <div className="col-12 text-center mt-3">
-                <button type="submit" className="bd-fill__btn">
+                <Link href={{ pathname: '/products/', query: { filter: segment } }} type="submit" className="bd-fill__btn">
                     View More
-                </button>
+                </Link>
             </div>
           </div>
         </div>
