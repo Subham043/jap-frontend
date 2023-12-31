@@ -29,7 +29,7 @@ const ShopSidebarRetting = ({setRatingSelected}:Props) => {
               </div>
             </label>
           </div>
-          {rattingSidebar?.length &&
+          {rattingSidebar?.length>0 &&
             rattingSidebar.map((item, index) => (
               <div key={index} className="bd-singel__rating">
                 <input

@@ -70,7 +70,7 @@ const ShopSidebarCategories = ({setCategorySelected}:Props) => {
                   </div>
                 </label>
               </div>
-              {categoryData?.length && (
+              {(categoryData && categoryData.length>0) && (
                 categoryData.flat().map((item, index) => (
                   <div
                     

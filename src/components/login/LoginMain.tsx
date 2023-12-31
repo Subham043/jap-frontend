@@ -70,7 +70,6 @@ const LoginMain = () => {
                       <div className="bd-postbox__singel-input">
                         <input
                           type="text"
-                          defaultValue={"orgadoadmin@gmail.com"}
                           placeholder="Enter Your Email"
                           {...register("email", {
                             required: "Email or UserName is required",
@@ -92,7 +91,6 @@ const LoginMain = () => {
                       <div className="bd-password-box d-flex justify-content-between">
                         <input
                           type={showPassword ? "text" : "password"}
-                          defaultValue={"org12541"}
                           placeholder="Password (at least 6 characters)"
                           {...register("password", {
                             required: "Password is required",

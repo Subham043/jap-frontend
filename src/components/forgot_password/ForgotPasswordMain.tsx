@@ -66,7 +66,6 @@ const ForgotPassword = () => {
                       <div className="bd-postbox__singel-input">
                         <input
                           type="text"
-                          defaultValue={"orgadoadmin@gmail.com"}
                           placeholder="Enter Your Email"
                           {...register("email", {
                             required: "Email or UserName is required",

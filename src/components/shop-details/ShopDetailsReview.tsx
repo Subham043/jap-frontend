@@ -6,6 +6,7 @@ import userIcon from "../../../public/assets/img/icon/user-icon.png";
 import Link from "next/link";
 import { ProductSegmentState } from "@/helper/types";
 import GetRatting from "../rating/GetRatting";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 interface propsType {
   product: ProductSegmentState
 }
@@ -13,44 +14,34 @@ interface propsType {
 const ShopDetailsReview = ({product}:propsType) => {
   return (
     <>
-      <div className="product_info-faq-area pt-50">
+      <Tabs className="product_info-faq-area pt-50" defaultIndex={1} selectedTabClassName='active' selectedTabPanelClassName='active show'>
         <nav className="product-details-tab">
-          <div className="nav nav-tabs" id="nav-tab" role="tablist">
-            <Link
+          <TabList className="nav nav-tabs" id="nav-tab" role="tablist">
+            <Tab
               className="nav-item nav-link show"
-              id="nav-general-tab"
-              data-bs-toggle="tab"
-              href="#nav-general"
-              role="tab"
-              aria-selected="false"
             >
               Description
-            </Link>
-            <Link
-              className="nav-item nav-link active"
-              id="nav-seller-tab"
-              data-bs-toggle="tab"
-              href="#nav-seller"
-              role="tab"
-              aria-selected="true"
+            </Tab>
+            <Tab
+              className="nav-item nav-link show"
             >
               Reviews
-            </Link>
-          </div>
+            </Tab>
+          </TabList>
         </nav>
         <div
           className="tab-content product-details-content"
           id="nav-tabContent"
         >
-          <div className="tab-pane fade" id="nav-general" role="tabpanel">
+          <TabPanel className="tab-pane fade" id="nav-general" role="tabpanel">
             <div className="tabs-wrapper mt-35">
               <div className="product__details-des">
-                <p> {product.description} </p>
+                {product.description ? <p> {product.description} </p> : <p>No description is available</p>}
               </div>
             </div>
-          </div>
-          <div
-            className="tab-pane fade active show"
+          </TabPanel>
+          <TabPanel
+            className="tab-pane fade"
             id="nav-seller"
             role="tabpanel"
           >
@@ -109,10 +100,10 @@ const ShopDetailsReview = ({product}:propsType) => {
 
               
             </div>
-            <AddReview/>
-          </div>
+            <AddReview product_id={product.id}/>
+          </TabPanel>
         </div>
-      </div>
+      </Tabs>
     </>
   );
 };

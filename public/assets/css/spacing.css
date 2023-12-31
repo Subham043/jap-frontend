@@ -52,3 +52,7 @@
     padding: 0 15px !important;
     height: 35px !important;
 }
+
+.nav-tabs .nav-link.active:focus-visible, .nav-tabs .nav-link.active:focus-within, .nav-tabs .nav-link.active:focus{
+    border-color: transparent !important;
+}

@@ -3,6 +3,7 @@ import { useClickAway } from "react-use";
 
 interface Option {
   categoryName: string;
+  value?: number|string;
 } 
 
 interface NiceSelectProps {

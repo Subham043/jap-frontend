@@ -30,3 +30,31 @@ export const payment_modes = [
     categoryName: "Cash On Delivery",
   },
 ];
+
+export const ratings = [
+  {
+    id: 1,
+    categoryName: "5 stars",
+    value: 5
+  },
+  {
+    id: 2,
+    categoryName: "4 stars",
+    value: 4
+  },
+  {
+    id: 3,
+    categoryName: "3 stars",
+    value: 3
+  },
+  {
+    id: 4,
+    categoryName: "2 stars",
+    value: 2
+  },
+  {
+    id: 5,
+    categoryName: "1 star",
+    value: 1
+  },
+];
