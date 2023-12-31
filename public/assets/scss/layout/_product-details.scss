@@ -1012,6 +1012,15 @@ p.checkout-coupon input[type="text"] {
 		border-left: none;
 	}
 }
+.main-product-quantity-cart {
+	.product-quantity-form {
+		.cart-plus {
+			border: none;
+			height: 59px;
+    		width: 59px;
+		}
+	}
+}
 
 .modal-product__details-content {
 	padding-left: 25px;

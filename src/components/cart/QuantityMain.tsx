@@ -1,16 +1,17 @@
 import React from "react";
 
 type Props = {
+    isSmall?: boolean;
     quantity:number;
     loading:boolean;
     incrementQuantity:()=>void;
     decrementQuantity:()=>void;
 }
 
-const QuantityMain = ({ quantity, loading, incrementQuantity, decrementQuantity }: Props) => {
+const QuantityMain = ({ isSmall=true, quantity, loading, incrementQuantity, decrementQuantity }: Props) => {
     
     return (
-        quantity===0 ? <button className="cart-btn bd-fill__btn product-card-main-btn mt-2" disabled={loading} onClick={()=>incrementQuantity()}>
+        quantity===0 ? <button className={`cart-btn bd-fill__btn ${isSmall ? 'product-card-main-btn' : ''} mt-2`} disabled={loading} onClick={()=>incrementQuantity()}>
             {loading ? 
                 <div className="spinner-grow spinner-grow-sm text-success" role="status">
                     <span className="sr-only">Loading...</span>

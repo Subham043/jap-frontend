@@ -33,7 +33,7 @@ const ProductCard = ({ product }: Props) => {
         }
     };
 
-    const wishlistItemHandler = async (id:number) => {   
+    const wishlistItemHandler = async () => {   
         try{
             setWishlistLoading(true)
             if(product && wishlist){
@@ -73,7 +73,7 @@ const ProductCard = ({ product }: Props) => {
                             data-toggle="tooltip"
                             data-placement="top"
                             title="Quick Wishlist"
-                            onClick={()=>!wishlistLoading && wishlistItemHandler(product.id)}
+                            onClick={()=>!wishlistLoading && wishlistItemHandler()}
                         >
                             {wishlistLoading ? 
                             <div className="spinner-grow spinner-grow-sm text-success" role="status">
