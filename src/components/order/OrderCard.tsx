@@ -1,4 +1,5 @@
 import { Order } from "@/helper/types";
+import Link from "next/link";
 import { useMemo } from "react";
 
 const OrderCard = ({order}: {order:Order}) => {
@@ -6,15 +7,15 @@ const OrderCard = ({order}: {order:Order}) => {
     return (
         <div className="student-profile-reviews">
             <div className="student-profile-reviews-item mb-30">
-            <div className="student-profile-reviews-course-title d-flex justify-content-between cursore_class">
+            <Link href={`/account/orders/${order.receipt}`} className="student-profile-reviews-course-title d-flex justify-content-between cursore_class">
                 <h5>
                 
                     Order Reciept : <small>{order.receipt} </small>
                 </h5>
                 <button className="copy-button">
-                <i className={`fa-solid fa-copy`}></i>
+                    <i className={`fal fa-eye`}></i>
                 </button>
-            </div>
+            </Link>
             <div className="student-profile-reviews-text">
                 <div className="student-profile-review-content">
             
