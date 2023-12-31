@@ -28,6 +28,7 @@ const GallerySection = () => {
                     hasMore={true}
                     loader={null}
                     refreshFunction={fetchNextPage}
+                    style={{overflowX: 'hidden'}}
                 >
                     <div className="row p-relative">
                         {Array.from(Array(numberOfImage).keys()).map((item) => {

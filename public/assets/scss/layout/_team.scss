@@ -6,6 +6,11 @@
 
 // Team style css
 .bd-team {
+	&__area {
+		@media #{$xs,$sm,$md}{
+			overflow: hidden;
+		}
+	}
 	&__wrapper {
 		@include transition(.3s);
 		&:hover {

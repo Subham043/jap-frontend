@@ -1,4 +1,3 @@
-// import GetRatting from "@/hooks/GetRatting";
 import React, { useState } from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";

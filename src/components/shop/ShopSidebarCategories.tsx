@@ -54,6 +54,7 @@ const ShopSidebarCategories = ({setCategorySelected}:Props) => {
               </div>}
               refreshFunction={fetchNextPage}
               scrollableTarget="product-category-list-holder"
+              style={{overflowX: 'hidden'}}
             >
               <div className="bd-singel__rating">
                 <input

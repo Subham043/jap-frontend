@@ -25,7 +25,7 @@ const MobileMenu = () => {
               item.hasDropdown && submenuOpen === item.id && open === true ? "menu-item-has-children has-droupdown active" : `${item.hasDropdown ? "menu-item-has-children has-droupdown" : ""}`
             }`}
           >
-            <Link href="">{item.title}</Link>
+            <Link href={item.link}>{item.title}</Link>
             {item.hasDropdown && (
               <ul
                 className={`sub-menu ${item.hasDropdown  && submenuOpen === item.id && open === true ? "active" : ""}`}

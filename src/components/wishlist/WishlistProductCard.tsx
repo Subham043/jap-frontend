@@ -1,3 +1,4 @@
+import { useGlobalContext } from "@/context/AppProvider";
 import Link from "next/link";
 import React from "react";
 
@@ -30,12 +31,12 @@ type Props = {
 }
 
 const WishlistProductCard = ({ product, loading, deleteHandler }: Props) => {
-    
+    const { setOpenWishlist } = useGlobalContext();
     const deleteClickHandler = () => deleteHandler(product.id)
 
     return <li>
     <div className="cartmini__thumb">
-      {product.featured_image_link && <Link href={`/products/${product.slug}`}>
+      {product.featured_image_link && <Link onClick={() => setOpenWishlist(false)} href={`/products/${product.slug}`}>
         <img
           style={{ width: "70px", height: "50px", objectFit:'contain' }}
           src={product.featured_image_link}
@@ -45,7 +46,7 @@ const WishlistProductCard = ({ product, loading, deleteHandler }: Props) => {
     </div>
     <div className="cartmini__content">
       <h5>
-        <Link href={`/products/${product.slug}`}>
+        <Link onClick={() => setOpenWishlist(false)} href={`/products/${product.slug}`}>
           {product.name}
         </Link>
       </h5>

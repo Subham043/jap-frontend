@@ -21,7 +21,7 @@ const Sidebar = () => {
                   <div className="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
                     <div className="offcanvas__logo logo">
                       <Link href="/">
-                        <Image src={logo} alt="logo" />
+                        <img src='/assets/img/logo/new-logo.png' alt="logo" style={{height: '90px', objectFit: 'contain'}} />
                       </Link>
                     </div>
                     <div className="offcanvas__close">
@@ -59,20 +59,7 @@ const Sidebar = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="offcanvas__search mb-25">
-                    <form action="#">
-                      <input
-                        type="text"
-                        placeholder="What are you searching for?"
-                      />
-                      <button type="submit">
-                        <i className="far fa-search"></i>
-                      </button>
-                    </form>
-                  </div>
                   <nav className="side-mobile-menu d-block d-xl-none mm-menu">
-                   
-
                     <MobileMenu />
                   </nav>
                   <div className="offcanvas__contact mt-30 mb-20">
@@ -96,7 +83,7 @@ const Sidebar = () => {
                           <i className="far fa-phone"></i>
                         </div>
                         <div className="offcanvas__contact-text">
-                          <Link href="tel:+088889797697">+088889797697 </Link>
+                          <Link href="tel:+91-9207300055">+91-9207300055 </Link>
                         </div>
                       </li>
                       <li className="d-flex align-items-center">
@@ -104,9 +91,9 @@ const Sidebar = () => {
                           <i className="fal fa-envelope"></i>
                         </div>
                         <div className="offcanvas__contact-text">
-                          <Link href="tel:+012-345-6789">
-                            <span className="mailto:support@mail.com">
-                              support@mail.com
+                          <Link href="mailto:operations@jap.bio">
+                            <span className="mailto:operations@jap.bio">
+                              operations@jap.bio
                             </span>
                           </Link>
                         </div>
@@ -117,13 +104,13 @@ const Sidebar = () => {
                     <ul>
                       <li>Share:</li>
                       <li>
-                        <Link href="https://www.facebook.com/" target="_blank">
+                        <Link href="https://www.facebook.com/jaivikavamprakrutikproducerltd" target="_blank">
                           <i className="fab fa-facebook-f"></i>
                         </Link>
                       </li>
                       <li>
                         <Link
-                          href="https://twitter.com/?lang=en"
+                          href="https://twitter.com/JaivikAvam"
                           title="Twitter"
                         >
                           <i className="fab fa-twitter"></i>
@@ -131,7 +118,7 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          href="https://www.linkedin.com/"
+                          href="https://www.linkedin.com/in/jaivik-avam-prakrutik-5501a327b/"
                           title="Linkedin"
                           target="_blank"
                         >
@@ -140,7 +127,7 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          href="https://www.instagram.com/"
+                          href="https://www.instagram.com/jaivikavamprakrutik/"
                           target="_blank"
                           title="Instagram"
                         >

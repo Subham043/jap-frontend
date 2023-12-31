@@ -50,6 +50,7 @@ const OrdersPage:NextPageWithLayout = () => {
                 </div>
                 </div>}
                 refreshFunction={fetchNextPage}
+                style={{overflowX: 'hidden'}}
             >
                 {(data ? data.flat() : []).map((item, index) => <OrderCard order={item} key={index} />)}
             </InfiniteScroll>

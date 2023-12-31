@@ -107,6 +107,7 @@ const ShopSection = () => {
                             </div>
                           </div>}
                           refreshFunction={fetchNextPage}
+                          style={{overflowX: 'hidden'}}
                         > 
                           <div className="row">
                                 <GridViewProduct products={data ? data.flat() : []} />

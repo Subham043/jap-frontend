@@ -1,3 +1,4 @@
+import { useGlobalContext } from "@/context/AppProvider";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -15,6 +16,7 @@ type Props = {
 }
 
 const CartProductCard = ({ id, slug, featured_image_link, name, total_quantity_price, quantity, loading, deleteHandler, incrementProductQuantity, decrementProductQuantity }: Props) => {
+    const { setOpenCart } = useGlobalContext();
     const [quantityLoading, setQuantityLoading] = useState<boolean>(false);
     
     const deleteClickHandler = () => {
@@ -39,7 +41,7 @@ const CartProductCard = ({ id, slug, featured_image_link, name, total_quantity_p
     };
     return <li>
         <div className="cartmini__thumb">
-            {featured_image_link && <Link href={`/products/${slug}`}>
+            {featured_image_link && <Link onClick={() => setOpenCart(false)} href={`/products/${slug}`}>
                 <img
                     style={{ width: "70px", height: "50px", objectFit:'contain' }}
                     src={featured_image_link}
@@ -49,7 +51,7 @@ const CartProductCard = ({ id, slug, featured_image_link, name, total_quantity_p
         </div>
         <div className="cartmini__content">
         <h5>
-            <Link href={`/products/${slug}`}>
+            <Link onClick={() => setOpenCart(false)} href={`/products/${slug}`}>
                 {name}
             </Link>
         </h5>

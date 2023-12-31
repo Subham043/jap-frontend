@@ -55,6 +55,11 @@
 }
 }
 .bd-banner {
+	&__area {
+		@media #{$xs,$sm,$md}{
+			overflow: hidden;
+		}
+	}
 	&__line {
 		position: absolute;
 		right: 1%;
