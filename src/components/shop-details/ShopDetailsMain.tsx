@@ -9,7 +9,6 @@ import papyle from "../../../public/assets/img/icon/paypal.png";
 import visa from "../../../public/assets/img/icon/visa.png";
 import Image from "next/image";
 import ShopDetailsReview from "./ShopDetailsReview";
-import RelatedProduct from "./RelatedProduct";
 import { ProductSegmentState } from "@/helper/types";
 import GetRatting from "../rating/GetRatting";
 import QuantityMain from "../cart/QuantityMain";

@@ -9,6 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useToast } from '@/hooks/useToast';
 import useAxiosPrivate from '@/hooks/useAxiosPrivate';
 import { api_routes } from '@/helper/routes';
+import { ErrorMessage } from '@hookform/error-message';
 
 const schema = yup
   .object({
@@ -88,9 +89,11 @@ const ProfilePage:NextPageWithLayout = () => {
                             placeholder="Name"
                             {...register("name")}
                         />
-                        {errors.name && (
-                            <span className='text-danger'>{errors.name.message}</span>
-                        )}
+                        <ErrorMessage
+                          errors={errors}
+                          name='message'
+                          as={<div style={{ color: 'red' }} />}
+                        />
                         </div>
                     </div>
 
@@ -103,9 +106,11 @@ const ProfilePage:NextPageWithLayout = () => {
                             placeholder="Email"
                             {...register("email")}
                         />
-                        {errors.email && (
-                            <span className='text-danger'>{errors.email.message}</span>
-                        )}
+                        <ErrorMessage
+                          errors={errors}
+                          name='message'
+                          as={<div style={{ color: 'red' }} />}
+                        />
                         </div>
                     </div>
                     <div className="col-md-4">
@@ -117,9 +122,11 @@ const ProfilePage:NextPageWithLayout = () => {
                             placeholder="Phone"
                             {...register("phone")}
                         />
-                        {errors.phone && (
-                            <span className='text-danger'>{errors.phone.message}</span>
-                        )}
+                        <ErrorMessage
+                          errors={errors}
+                          name='message'
+                          as={<div style={{ color: 'red' }} />}
+                        />
                         </div>
                     </div>
 

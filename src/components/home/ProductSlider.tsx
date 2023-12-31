@@ -1,10 +1,7 @@
-import Link from "next/link";
-import React, { useCallback } from "react";
+import React from "react";
 import { Scrollbar, A11y, Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
-import Image from "next/image";
-// import GetRatting from "@/hooks/GetRatting";
 import { ProductSegmentState } from "@/helper/types";
 import useSWR from "swr";
 import { axiosPublic } from "../../../axios";
