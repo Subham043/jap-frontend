@@ -1,14 +1,14 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useCallback } from 'react';
 import { NextPageWithLayout } from '../../_app';
 import AccountLayout from '@/components/sheardComponent/AccountLayout';
 import Pagetitle from '@/components/sheardComponent/Pagetitle';
 import { Order } from '@/helper/types';
 import { useSession } from 'next-auth/react';
-import useAxiosPrivate from '@/hooks/useAxiosPrivate';
 import useSWR from 'swr'
 import { api_routes } from '@/helper/routes';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
+import { axiosPublic } from '../../../../axios';
 
 type ServerSideProps = {
     reciept: string
@@ -28,9 +28,23 @@ repo: ServerSideProps
 }
 
 const OrderDetailPage:NextPageWithLayout<InferGetServerSidePropsType<typeof getServerSideProps>> = ({repo}) => {
-    const { status } = useSession();
-    const axiosPrivate = useAxiosPrivate();
-    const fetcher = (url: string) => axiosPrivate.get(url).then((res) => res.data.order);
+    const { status, data:session } = useSession();
+    const fetcher = useCallback(
+        async (url: string) => {
+          if(status==='authenticated'){
+            const headers = {
+              headers: {
+                "Authorization" : `Bearer ${session?.user.token}`,
+                "Accept": 'application/json'
+              }
+            }
+            const res =  await axiosPublic.get(url,headers)
+            return res.data.order;
+          }
+          return undefined;
+        },
+        [status, session],
+    );
     const { data:order, isLoading:loading } = useSWR<Order>(status==='authenticated' ? api_routes.place_order_detail+`/${repo.reciept}` : null, fetcher);
 
     return (
@@ -166,7 +180,7 @@ const OrderDetailPage:NextPageWithLayout<InferGetServerSidePropsType<typeof getS
 OrderDetailPage.getLayout = function getLayout(page: ReactElement) {
     return (
         <main>
-            <Pagetitle title='Settings' img='/assets/img/banner/page-banner-2.jpg' />
+            <Pagetitle title='Order Detail' img='/assets/img/banner/page-banner-2.jpg' />
             <AccountLayout>
                 {page}
             </AccountLayout>

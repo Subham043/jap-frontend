@@ -10,6 +10,7 @@ import useAxiosPrivate from "@/hooks/useAxiosPrivate";
 import { api_routes } from "@/helper/routes";
 import useRazorpay from "react-razorpay";
 import { Order } from "@/helper/types";
+import { useRouter } from "next/router";
 
 const schema = yup
   .object({
@@ -38,6 +39,7 @@ const CheckOutMain = () => {
   const [loadingCheckout, setLoadingCheckout] = useState(false);
   const axiosPrivate = useAxiosPrivate();
   const [Razorpay] = useRazorpay();
+  const router = useRouter();
 
   const {
     handleSubmit,
@@ -82,10 +84,7 @@ const CheckOutMain = () => {
           mode_of_payment: "",
         });
         await updateCart([]);
-        // history.push({
-        //   pathname: `/orders/${response.data.order.receipt}`,
-        //   state: {success: true}
-        // })
+        router.push(`/account/orders/${response.data.order.receipt}`)
       }else{
         loadRazorpay(response.data.order as Order);
       }
@@ -207,6 +206,7 @@ const CheckOutMain = () => {
         mode_of_payment: "",
       });
       await updateCart([]);
+      router.push(`/account/orders/${response.data.order.receipt}`)
     } catch (error: any) {
       if (error?.response?.data?.message) {
         toastError(error?.response?.data?.message);

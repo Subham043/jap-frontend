@@ -41,7 +41,9 @@
 .student-profile-sidebar {
     background-color: var(--clr-bg-grey);
     padding: 30px;
-    min-height: 100%;
+    // min-height: 100%;
+    position: sticky;
+    top: 100px;
 
     .nav {
         flex-direction: column;
