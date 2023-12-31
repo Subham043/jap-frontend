@@ -173,6 +173,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <a href="https://wa.me/9207300055" className="whatsapp_float" target="_blank" rel="noopener noreferrer"> <i className="fab fa-whatsapp whatsapp-icon"></i></a>
     </footer>
   );
 };
