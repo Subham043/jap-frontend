@@ -8,6 +8,7 @@ import { Order } from '@/helper/types';
 import useSWRInfinite from "swr/infinite";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import OrderCard from '@/components/order/OrderCard';
+import Head from 'next/head';
 
 const PAGE_SIZE = 20;
 
@@ -39,6 +40,9 @@ const OrdersPage:NextPageWithLayout = () => {
 
     return (
         <>
+            <Head>
+                <title>JAP - Orders</title>
+            </Head>
             <h4 className="mb-25">Orders</h4>
             <InfiniteScroll
                 dataLength={data ? data.flat().length : 0}

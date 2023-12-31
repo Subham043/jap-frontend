@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/useToast';
 import useAxiosPrivate from '@/hooks/useAxiosPrivate';
 import { api_routes } from '@/helper/routes';
 import { ErrorMessage } from '@hookform/error-message';
+import Head from 'next/head';
 
 const schema = yup
   .object({
@@ -77,6 +78,9 @@ const ProfilePage:NextPageWithLayout = () => {
 
     return (
         <>
+            <Head>
+              <title>JAP - Profile</title>
+            </Head>
             <h4 className="mb-25">My Profile</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="row">

@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useToast } from '@/hooks/useToast';
 import useAxiosPrivate from '@/hooks/useAxiosPrivate';
 import { api_routes } from '@/helper/routes';
+import Head from 'next/head';
 
 const schema = yup
   .object({
@@ -77,6 +78,9 @@ const SettingsPage:NextPageWithLayout = () => {
 
     return (
         <>
+            <Head>
+              <title>JAP - Settings</title>
+            </Head>
             <h4 className="mb-25">Settings</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="row">

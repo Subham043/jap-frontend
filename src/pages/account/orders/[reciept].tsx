@@ -9,6 +9,7 @@ import { api_routes } from '@/helper/routes';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
 import { axiosPublic } from '../../../../axios';
+import Head from 'next/head';
 
 type ServerSideProps = {
     reciept: string
@@ -49,6 +50,9 @@ const OrderDetailPage:NextPageWithLayout<InferGetServerSidePropsType<typeof getS
 
     return (
         <>
+            <Head>
+                <title>JAP - Orders</title>
+            </Head>
             {loading && <div className="text-center py-1">
                 <div className="spinner-border text-success" role="status">
                     <span className="sr-only">Loading...</span>

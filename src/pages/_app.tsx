@@ -15,6 +15,7 @@ import { NextPage } from 'next';
 import { ReactElement, ReactNode } from 'react';
 import { Jost } from 'next/font/google';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
 const jost = Jost({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -46,6 +47,12 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
         <AppProvider>
           <TopProgressBar />
           <div className={jost.className}>
+            <Head>
+              <title>JAP - Home</title>
+              <meta name="description" content="JAP-PCL was created as a multi-state farmers producer company, started by shareholder-member farmers from Karnataka, Tamil Nadu, Kerala and Andhra Pradesh. All these farmers practice only organic farming or natural farming, and hence the names, jaivik (organic) and pratrutik (natural)." />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <link rel="icon" href="/assets/img/logo/new-logo.png" />
+            </Head>
             <Header/>
             {getLayout(<Component {...pageProps} />)}
             <Footer/>

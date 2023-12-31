@@ -5,6 +5,7 @@ import { axiosPublic } from "../../../axios";
 import { api_routes } from "@/helper/routes";
 import { ProductSegmentState } from "@/helper/types";
 import Pagetitle from "@/components/sheardComponent/Pagetitle";
+import Head from "next/head";
 
 type ServerSideProps = {
   product: ProductSegmentState
@@ -35,6 +36,9 @@ const ProductDetail = ({repo}: InferGetServerSidePropsType<typeof getServerSideP
   
   return (
     <>
+        <Head>
+          <title>JAP - {repo.product.name}</title>
+        </Head>
         <main>
             <Pagetitle title={repo.product.name} img='/assets/img/banner/page-banner-2.jpg' />
             <ShopDetailsMain product={repo.product}/>
