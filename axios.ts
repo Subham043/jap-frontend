@@ -1,8 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
 import { ENV } from './src/env/env';
+import NProgress from "nprogress";
 
-
-export const axiosPublic:AxiosInstance = axios.create({
+const axiosPublic:AxiosInstance = axios.create({
     baseURL: ENV.API_ENDPOINT,
     headers: {
         post: {
@@ -14,3 +14,7 @@ export const axiosPublic:AxiosInstance = axios.create({
     },
     withCredentials: false,
 })
+
+export {
+    axiosPublic
+};
