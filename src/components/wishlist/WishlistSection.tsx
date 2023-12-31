@@ -5,7 +5,7 @@ import WishlistTableCard from "./WishlistTableCard";
 
 const WishlistSection = () => {
   const [loading, setLoading] = useState(false);
-  const {wishlist, removeWishlistItem} = useWishlist();
+  const {wishlist, removeWishlistItem, wishlistLoading} = useWishlist();
   const {toastSuccess} = useToast();
 
   const removeWishlistHandler = async(product_id:number) => {  
@@ -21,6 +21,11 @@ const WishlistSection = () => {
   return (
     <div className="cart-area pt-55 pb-50">
       <div className="container small-container">
+        
+        {wishlistLoading && <div className="spinner-border text-success" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>}
+
         {!wishlist || wishlist.products.length === 0 && (
           <div className="text-center">
             <h3>Your wishlist is empty</h3>

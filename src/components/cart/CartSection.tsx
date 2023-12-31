@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/useToast";
 
 const CartSection = () => {
 
-  const {cart, removeCartItem, incrementProductQuantity, decrementProductQuantity} = useCart();
+  const {cart, removeCartItem, incrementProductQuantity, decrementProductQuantity, cartLoading} = useCart();
   const [loading, setLoading] = useState(false);
   const {toastSuccess} = useToast();
   const removeCartHandler = async(product_id:number) => {  
@@ -21,6 +21,9 @@ const CartSection = () => {
   
   return (
     <>
+      {cartLoading && <div className="spinner-border text-success" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>}
       {!cart || cart.products.length === 0 && (
         <div className="container">
           <div className="empty-text pt-100 pb-100 text-center">

@@ -223,7 +223,10 @@ const CheckOutMain = () => {
     <>
       <section className="checkout-area pt-50 pb-30">
         <div className="container small-container">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          {cartLoading && <div className="spinner-border text-success" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>}
+          {(cart && cart.products.length>0) && <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
               {/* billing info */}
               <div className="col-lg-7">
@@ -500,7 +503,7 @@ const CheckOutMain = () => {
                 </div>
               </div>
             </div>
-          </form>
+          </form>}
         </div>
       </section>
     </>
