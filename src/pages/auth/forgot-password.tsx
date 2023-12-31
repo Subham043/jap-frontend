@@ -26,7 +26,7 @@ const ForgotPasswordMain = () => {
               <title>JAP - Forgot Password</title>
             </Head>
             <main>
-                <Pagetitle title='Forgot Password' img='/assets/img/banner/page-banner-2.jpg' />
+                <Pagetitle title='Forgot Password' img='/assets/img/banner/page-banner-4.jpg' />
                 <ForgotPassword/>
             </main>
         </>

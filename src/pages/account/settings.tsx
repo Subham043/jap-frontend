@@ -188,7 +188,7 @@ const SettingsPage:NextPageWithLayout = () => {
 SettingsPage.getLayout = function getLayout(page: ReactElement) {
     return (
         <main>
-            <Pagetitle title='Settings' img='/assets/img/banner/page-banner-2.jpg' />
+            <Pagetitle title='Settings' img='/assets/img/banner/page-banner-7.jpg' />
             <AccountLayout>
                 {page}
             </AccountLayout>

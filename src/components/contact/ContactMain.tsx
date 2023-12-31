@@ -6,7 +6,7 @@ import Pagetitle from "../sheardComponent/Pagetitle";
 const ContactMain = () => {
   return (
     <>
-      <Pagetitle title='Contact us' img='/assets/img/banner/page-banner-2.jpg' />
+      <Pagetitle title='Contact us' img='/assets/img/banner/page-banner-3.jpg' />
       <ContactForm />
       <ContactMap />
     </>

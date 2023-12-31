@@ -9,7 +9,7 @@ import Pagetitle from '../sheardComponent/Pagetitle';
 const AboutMain = () => {
     return (
         <>
-            <Pagetitle title='Jaivik Avam Prakrutik' img='/assets/img/banner/page-banner-2.jpg' />
+            <Pagetitle title='Jaivik Avam Prakrutik' img='/assets/img/banner/page-banner-3.jpg' />
             <AboutSection />
             <AboutSectionTwo/>
             <AboutFactSection/>

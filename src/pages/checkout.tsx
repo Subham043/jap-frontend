@@ -9,7 +9,7 @@ const Checkout = () => {
           <title>JAP - Checkout</title>
         </Head>
         <main>
-            <Pagetitle title='Checkout' img='/assets/img/banner/page-banner-2.jpg' />
+            <Pagetitle title='Checkout' img='/assets/img/banner/page-banner-6.jpg' />
             <CheckOutMain />
         </main>
     </>

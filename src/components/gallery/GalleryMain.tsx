@@ -5,7 +5,7 @@ import Pagetitle from '../sheardComponent/Pagetitle';
 const GalleryMain = () => {
     return (
         <>
-            <Pagetitle title='Gallery' img='/assets/img/banner/page-banner-2.jpg' />
+            <Pagetitle title='Gallery' img='/assets/img/banner/page-banner-7.jpg' />
             <GallerySection/>
         </>
     );

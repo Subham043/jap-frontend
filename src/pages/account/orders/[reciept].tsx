@@ -184,7 +184,7 @@ const OrderDetailPage:NextPageWithLayout<InferGetServerSidePropsType<typeof getS
 OrderDetailPage.getLayout = function getLayout(page: ReactElement) {
     return (
         <main>
-            <Pagetitle title='Order Detail' img='/assets/img/banner/page-banner-2.jpg' />
+            <Pagetitle title='Order Detail' img='/assets/img/banner/page-banner-4.jpg' />
             <AccountLayout>
                 {page}
             </AccountLayout>

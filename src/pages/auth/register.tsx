@@ -26,7 +26,7 @@ const SignUp = () => {
               <title>JAP - Register</title>
             </Head>
             <main>
-                <Pagetitle title='Register' img='/assets/img/banner/page-banner-2.jpg' />
+                <Pagetitle title='Register' img='/assets/img/banner/page-banner-3.jpg' />
                 <RegistarMain />
             </main>
         </>
