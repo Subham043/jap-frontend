@@ -66,7 +66,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-6 d-flex gap-5 justify-content-end">
+              <div className="col-xxl-2 col-xl-2 col-lg-2 col-md-auto col-auto d-flex gap-5 justify-content-end">
                 <div className="bd-header__right header__right-3">
                   <div className="bd-action__cart-list list-3">
                     <div className="bd-action__item">

@@ -41,7 +41,7 @@ const settings = {
 const TeamSection = () => {
  
   return (
-    <section className="bd-team__area pt-55 pb-15">
+    <section className="bd-team__area pt-55 pb-25">
       <div className="container">
         <div className="row">
           <div className="col-12">

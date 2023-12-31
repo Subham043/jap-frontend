@@ -1514,8 +1514,8 @@
 // ====
 
 .bd-header__logo-3 img {
-	@media #{$xxs} {
-		width: 100%;
-		height: auto;
+	@media #{$xxs, $sm} {
+		width: auto;
+		height: 100px !important;
 	}
 }

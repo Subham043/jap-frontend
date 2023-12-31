@@ -105,7 +105,7 @@ div.bd-banner-pagination {
 // Product carousel
 .bd-product__nav {
 	@media #{$xs}{
-		display: none;
+		// display: none;
 	}
 	button {
 		height: 50px;
@@ -130,10 +130,16 @@ div.bd-banner-pagination {
 			}
 		&.product-button-prev {
 			left: -25px;
+			@media #{$xs, $xxs, $sm}{
+				left: -5px;
+			}
 		}
 		&.product-button-next {
 			right: -20px;
 			left: auto;
+			@media #{$xs, $xxs, $sm}{
+				right: -5px;
+			}
 		}
 	}
 }

@@ -65,11 +65,23 @@
 			position: absolute;
 			left: 0;
 			bottom: 0;
+			&>img{
+				@media #{$xs, $xxs, $sm}{
+					height: 300px !important;
+					object-fit: contain;
+				}
+			}
 		}
 		&-2 {
 			position: absolute;
 			right: 0;
 			top: 75px;
+			&>img{
+				@media #{$xs, $xxs, $sm}{
+					height: 300px !important;
+					object-fit: contain;
+				}
+			}
 		}
 	}
 	&__quite{
@@ -127,6 +139,9 @@
 			top: 53%;
 			left: 50%;
 			transform: translate(-50%);
+			@media #{$xs, $xxs, $sm}{
+				top: 50%;
+			}
 		}
 		&-2 {
 			position: absolute;
