@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { countries, payment_modes } from "./nice-select-data";
 import NiceSelectTwo from "./NiceSelectTwo";
@@ -9,8 +9,11 @@ import { useToast } from "@/hooks/useToast";
 import useAxiosPrivate from "@/hooks/useAxiosPrivate";
 import { api_routes } from "@/helper/routes";
 import useRazorpay from "react-razorpay";
-import { Order } from "@/helper/types";
+import { Order, OrderBillinInfo } from "@/helper/types";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import { axiosPublic } from "../../../axios";
+import useSWR from 'swr'
 
 const schema = yup
   .object({
@@ -41,6 +44,25 @@ const CheckOutMain = () => {
   const [Razorpay] = useRazorpay();
   const router = useRouter();
 
+  const { status, data:session } = useSession();
+  const fetcher = useCallback(
+      async (url: string) => {
+        if(status==='authenticated'){
+          const headers = {
+            headers: {
+              "Authorization" : `Bearer ${session?.user.token}`,
+              "Accept": 'application/json'
+            }
+          }
+          const res =  await axiosPublic.get(url,headers)
+          return res.data.order;
+        }
+        return undefined;
+      },
+      [status, session],
+  );
+  const { data:billingInfo, isLoading:billingInfoLoading } = useSWR<OrderBillinInfo | null>(status==='authenticated' ? api_routes.latest_order_billing_info : null, fetcher);
+      
   const {
     handleSubmit,
     register,
@@ -53,15 +75,15 @@ const CheckOutMain = () => {
     resolver: yupResolver(schema),
     values:{
       mode_of_payment:'Online',
-      billing_country: 'India',
-      billing_state: "",
-      billing_city: "",
-      billing_pin: "",
-      billing_address_1: "",
-      billing_first_name: "",
-      billing_last_name: "",
-      billing_email: "",
-      billing_phone: "",
+      billing_country: billingInfo ? billingInfo.billing_country : 'India',
+      billing_state: billingInfo ? billingInfo.billing_state : "",
+      billing_city: billingInfo ? billingInfo.billing_city : "",
+      billing_pin: billingInfo ? billingInfo.billing_pin.toString() : "",
+      billing_address_1: billingInfo ? billingInfo.billing_address_1 : "",
+      billing_first_name: billingInfo ? billingInfo.billing_first_name : "",
+      billing_last_name: billingInfo ? billingInfo.billing_last_name : "",
+      billing_email: billingInfo ? billingInfo.billing_email : "",
+      billing_phone: billingInfo ? billingInfo.billing_phone.toString() : "",
     }
   });
 
@@ -223,8 +245,10 @@ const CheckOutMain = () => {
     <>
       <section className="checkout-area pt-50 pb-30">
         <div className="container small-container">
-          {cartLoading && <div className="spinner-border text-success" role="status">
-            <span className="sr-only">Loading...</span>
+          {(cartLoading || billingInfoLoading) && <div className="w-100 text-center">
+            <div className="spinner-border text-success" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
           </div>}
           {(cart && cart.products.length>0) && <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">

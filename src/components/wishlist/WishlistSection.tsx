@@ -22,8 +22,10 @@ const WishlistSection = () => {
     <div className="cart-area pt-55 pb-50">
       <div className="container small-container">
         
-        {wishlistLoading && <div className="spinner-border text-success" role="status">
-          <span className="sr-only">Loading...</span>
+        {wishlistLoading && <div className="w-100 text-center">
+          <div className="spinner-border text-success" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
         </div>}
 
         {!wishlist || wishlist.products.length === 0 && (

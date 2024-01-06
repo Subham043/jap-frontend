@@ -21,8 +21,10 @@ const CartSection = () => {
   
   return (
     <>
-      {cartLoading && <div className="spinner-border text-success" role="status">
-        <span className="sr-only">Loading...</span>
+      {cartLoading && <div className="w-100 text-center">
+        <div className="spinner-border text-success" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
       </div>}
       {!cart || cart.products.length === 0 && (
         <div className="container">
