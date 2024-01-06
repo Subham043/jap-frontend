@@ -2,7 +2,7 @@ import React from 'react';
 import AboutSectionTwo from './AboutSectionTwo';
 import AboutFactSection from './AboutFactSection';
 import AboutTimeline from './AboutTimeline';
-import TeamSection from './TeamSection';
+import TeamSection2 from './TeamSection2';
 import AboutSection from './AboutSection';
 import Pagetitle from '../sheardComponent/Pagetitle';
 
@@ -13,7 +13,7 @@ const AboutMain = () => {
             <AboutSection />
             <AboutSectionTwo/>
             <AboutFactSection/>
-            <TeamSection/>
+            <TeamSection2/>
             <AboutTimeline/>
         </>
     );

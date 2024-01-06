@@ -40,7 +40,7 @@ const ContactForm = () => {
   const onSubmit = async() => {
     setLoading(true);
     try {
-      const response = await axiosPublic.post(api_routes.enquiry, {...getValues()});
+      const response = await axiosPublic.post(api_routes.contact, {...getValues()});
       toastSuccess(response.data.message);
       reset({
         message: '',
@@ -209,8 +209,7 @@ const ContactForm = () => {
                             <h4>Location</h4>
                           </div>
                           <p>
-                            Abbot Favicon Kinney, New York, <br />
-                            USA - 25423
+                            Salivaram PO, Denkanikottai, Tamil Nadu - 635107
                           </p>
                         </div>
                       </div>

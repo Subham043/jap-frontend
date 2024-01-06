@@ -411,8 +411,7 @@ const B2bForm = () => {
                             <h4>Location</h4>
                           </div>
                           <p>
-                            Abbot Favicon Kinney, New York, <br />
-                            USA - 25423
+                            Salivaram PO, Denkanikottai, Tamil Nadu - 635107
                           </p>
                         </div>
                       </div>

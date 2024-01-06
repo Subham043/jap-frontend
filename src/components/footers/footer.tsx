@@ -37,8 +37,7 @@ const Footer = () => {
                       </Link>
                     </span>
                     <span>
-                      <i className="fa-solid fa-location-dot"></i>Favicon,
-                      New York, USA - 25423
+                      <i className="fa-solid fa-location-dot"></i>Salivaram PO, Denkanikottai, Tamil Nadu - 635107
                     </span>
                   </div>
                 </div>

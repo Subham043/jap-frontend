@@ -186,7 +186,7 @@ const ShopDetailsMain = ({ product }: Props) => {
                             <strong>Categories:</strong>
                             <span>
                               {
-                                product.categories.map((item, i) => <Link href="/shop" key={i}>{item.name}</Link>)
+                                product.categories.map((item, i) => <Link href='#' key={i}>{item.name}</Link>)
                               }
                             </span>
                           </li>

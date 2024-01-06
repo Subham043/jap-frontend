@@ -13,6 +13,11 @@ interface TeamMember {
     title: string;
     img: string;
 }
+interface TeamMember2 {
+    _id:string
+    name1: string;
+    name2?: string;
+}
 
 export const teamData:TeamMember[] = [
     {
@@ -59,5 +64,32 @@ export const teamData:TeamMember[] = [
         _id: "team-id-9",
         title: "Ms. Mahadevi",
         img: imgThumbNine,
+    },
+]
+
+export const teamData2:TeamMember2[] = [
+    {
+        _id: "team-id-1",
+        name1: "Mr. Umashankar Narayanaswamy",
+        name2: "Mr. Jaganathan S",
+    },
+    {
+        _id: "team-id-3",
+        name1: "Ms. Deepa Umashankar",
+        name2: "Mr. Ramalingam B",
+    },
+    {
+        _id: "team-id-5",
+        name1: "Mr. Girish",
+        name2: "Mr. Uruvatti Muthu",
+    },
+    {
+        _id: "team-id-7",
+        name1: "Mr. Mahendran A",
+        name2: "Mr. Manoj Kumar Menon",
+    },
+    {
+        _id: "team-id-9",
+        name1: "Ms. Mahadevi",
     },
 ]
