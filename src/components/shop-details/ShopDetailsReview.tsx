@@ -54,7 +54,7 @@ const ShopDetailsReview = ({product}:propsType) => {
                         {item.image_link ? (
                           <>
                             <Link href="#">
-                              <img
+                              <Image
                                 src={item.image_link}
                                 alt="image not found"
                                 width={200}

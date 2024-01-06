@@ -1,4 +1,5 @@
 
+import Image from 'next/image';
 import React from 'react';
 
 const AboutFactSection = () => {
@@ -16,7 +17,10 @@ const AboutFactSection = () => {
                 </div>
                 <div className="row g-0 align-items-center justify-content-center">
                     <div className="col-xl-12 col-lg-12 col-md-12 d-flex flex-wrap p-relative">
-                        <img
+                        <Image
+                            width={1280}
+                            height={720}
+                            priority={false}
                             src='/assets/img/about/reach1.jpg'
                             alt="choose-big"
                             style={{ width: "100%", height: "auto" }}

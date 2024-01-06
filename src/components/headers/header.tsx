@@ -51,7 +51,7 @@ const Header = () => {
               <div className="col-xxl-2 col-xl-2 col-lg-2 col-md-auto col-auto">
                 <div className="bd-header__logo-3">
                   <Link href="/" className="header-logo-link">
-                    <img src='/assets/img/logo/new-logo.png' alt="logo" className="header-logo-main" />
+                    <Image width={116} height={125} src='/assets/img/logo/new-logo.png' alt="logo" className="header-logo-main" style={{ width: "auto" }} />
                   </Link>
                 </div>
               </div>

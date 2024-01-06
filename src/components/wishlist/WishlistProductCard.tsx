@@ -1,4 +1,5 @@
 import { useGlobalContext } from "@/context/AppProvider";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -37,7 +38,7 @@ const WishlistProductCard = ({ product, loading, deleteHandler }: Props) => {
     return <li>
     <div className="cartmini__thumb">
       {product.featured_image_link && <Link onClick={() => setOpenWishlist(false)} href={`/products/${product.slug}`}>
-        <img
+        <Image width={116} height={125}
           style={{ width: "70px", height: "50px", objectFit:'contain' }}
           src={product.featured_image_link}
           alt=""

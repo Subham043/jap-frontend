@@ -37,7 +37,7 @@ const ProductDetail = ({repo}: InferGetServerSidePropsType<typeof getServerSideP
   return (
     <>
         <Head>
-          <title>JAP - {repo.product.name}</title>
+          <title>{`JAP - ${repo.product.name}`}</title>
         </Head>
         <main>
             <Pagetitle title={repo.product.name} img='/assets/img/banner/page-banner-4.jpg' />

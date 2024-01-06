@@ -2,6 +2,7 @@ const thumbOne = "/assets/img/banner/slider/b1.webp"
 const thumbTow = "/assets/img/banner/slider/b2.webp"
 const thumbThree = "/assets/img/banner/slider/b3.webp"
 const thumbFour = "/assets/img/banner/slider/b4.webp"
+import Image from "next/image";
 import Slider from "react-slick";
 
 const settings = {
@@ -20,22 +21,22 @@ const HeroSlider = () => {
                     <Slider {...settings}>
                         <div>
                             <div className="bd-banner__image-2">
-                                <img src={thumbOne} alt="banner-img" />
+                                <Image width={1280} height={420} priority={true} src={thumbOne} placeholder="blur" blurDataURL={thumbOne} alt="banner-img" />
                             </div>
                         </div>
                         <div>
                             <div className="bd-banner__image-2">
-                            <img src={thumbTow} alt="banner-img" />
+                            <Image width={1280} height={420} priority={false} src={thumbTow} placeholder="blur" blurDataURL={thumbTow} alt="banner-img" />
                             </div>
                         </div>
                         <div>
                             <div className="bd-banner__image-2">
-                            <img src={thumbThree}  alt="banner-img" />
+                            <Image width={1280} height={420} priority={false} src={thumbThree} placeholder="blur" blurDataURL={thumbThree}  alt="banner-img" />
                             </div>
                         </div>
                         <div>
                             <div className="bd-banner__image-2">
-                            <img src={thumbFour}  alt="banner-img" />
+                            <Image width={1280} height={420} priority={false} src={thumbFour} placeholder="blur" blurDataURL={thumbFour}  alt="banner-img" />
                             </div>
                         </div>
                     </Slider>

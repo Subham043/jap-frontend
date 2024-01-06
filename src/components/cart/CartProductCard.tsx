@@ -1,4 +1,5 @@
 import { useGlobalContext } from "@/context/AppProvider";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -42,7 +43,7 @@ const CartProductCard = ({ id, slug, featured_image_link, name, total_quantity_p
     return <li>
         <div className="cartmini__thumb">
             {featured_image_link && <Link onClick={() => setOpenCart(false)} href={`/products/${slug}`}>
-                <img
+                <Image width={116} height={125}
                     style={{ width: "70px", height: "50px", objectFit:'contain' }}
                     src={featured_image_link}
                     alt=""

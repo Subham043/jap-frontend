@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import CartIcon from "../sheardComponent/elements/icons/cart-icon";
 import WishlistIcon from "../sheardComponent/elements/icons/wishlist-icon";
-import logo from "../../../public/assets/img/logo/logo-2.png";
 import Image from "next/image";
 import MobileMenu from "./elements/MobileMenu";
 import { useGlobalContext } from "@/context/AppProvider";
@@ -21,7 +20,7 @@ const Sidebar = () => {
                   <div className="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
                     <div className="offcanvas__logo logo">
                       <Link href="/">
-                        <img src='/assets/img/logo/new-logo.png' alt="logo" style={{height: '90px', objectFit: 'contain'}} />
+                        <Image width={116} height={125} src='/assets/img/logo/new-logo.png' alt="logo" style={{height: '90px', objectFit: 'contain'}} />
                       </Link>
                     </div>
                     <div className="offcanvas__close">

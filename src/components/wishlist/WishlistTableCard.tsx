@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -36,7 +37,7 @@ const WishlistTableCard = ({ product, loading, deleteHandler }: Props) => {
     return <tr>
       <td className="product-thumbnail">
         {product.featured_image_link && <Link href={`/products/${product.slug}`}>
-          <img
+          <Image width={116} height={125}
             src={product.featured_image_link}
             style={{ width: "70px", height: "50px", objectFit:'contain' }}
             alt=""

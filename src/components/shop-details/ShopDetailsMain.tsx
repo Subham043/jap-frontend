@@ -93,11 +93,12 @@ const ShopDetailsMain = ({ product }: Props) => {
                                     <SwiperSlide key={index}>
                                       <div className="swiper-slides">
                                         <div className="bd-product__details-large-img w-img">
-                                          {item && <img
+                                          {item && <Image
                                             src={item}
                                             alt="product-details-img"
                                             width={577}
                                             height={577}
+                                            priority={false}
                                             style={{
                                               width: "100%",
                                               height: "auto",
@@ -128,11 +129,9 @@ const ShopDetailsMain = ({ product }: Props) => {
                                   <SwiperSlide key={index}>
                                     <div className="swiper-slides m-img">
                                       <div className="product-small__img">
-                                        {item && <img
+                                        {item && <Image width={216} height={125}
                                           src={item}
                                           alt="product-details-img"
-                                          width={70}
-                                          height={70}
                                           style={{
                                             width: "100%",
                                             height: "auto",

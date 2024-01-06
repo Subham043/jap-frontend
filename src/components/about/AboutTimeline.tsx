@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const AboutTimeline = () => {
@@ -15,7 +16,10 @@ const AboutTimeline = () => {
             </div>
             <div className="row g-0 align-items-center justify-content-center">
                 <div className="col-xl-12 col-lg-12 col-md-12 d-flex flex-wrap p-relative">
-                    <img
+                    <Image
+                        width={1280}
+                        height={720}
+                        priority={false}
                         src='/assets/img/about/timeline.jpeg'
                         alt="choose-big"
                         style={{ width: "100%", height: "auto" }}

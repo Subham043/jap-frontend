@@ -3,6 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import ImageViewer from 'react-simple-image-viewer';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { galleryData } from "./gallery-data";
+import Image from "next/image";
 
 const GallerySection = () => {
     const [numberOfImage, setNumberOfImage] = useState(20);
@@ -75,7 +76,9 @@ const GallerySection = () => {
                             <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12" key={i+1}>
                                 <div className="bd-team__wrapper mx-1">
                                     <div className="bd-team__thumb w-img p-relative">
-                                        <img
+                                        <Image
+                                            width={300}
+                                            height={300}
                                             style={{ width: "100%", height: "250px", objectFit: 'cover', cursor: 'pointer' }}
                                             src={`/assets/img/gallery/${item.id}.jpeg`}
                                             alt="team-thumb"

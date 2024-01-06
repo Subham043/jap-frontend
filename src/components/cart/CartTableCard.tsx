@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -41,7 +42,7 @@ const CartTableCard = ({ id, slug, featured_image_link, name, total_quantity_pri
     return <tr>
     <td className="product-thumbnail">
       {featured_image_link && <Link href={`/products/${slug}`}>
-        <img
+        <Image width={116} height={125}
           src={featured_image_link}
           style={{ width: "70px", height: "50px", objectFit:'contain' }}
           alt=""

@@ -1,6 +1,7 @@
 import React from "react";
 import { teamData } from "./team-data";
 import Slider from "react-slick";
+import Image from "next/image";
 
 const settings = {
   dots: true,
@@ -58,7 +59,7 @@ const TeamSection = () => {
                 <div key={index}>
                   <div className="bd-team__wrapper mx-1">
                     <div className="bd-team__thumb w-img p-relative">
-                      <img
+                      <Image width={300} height={300} priority={false}
                         style={{ width: "100%", height: "auto" }}
                         src={item.img}
                         alt="team-thumb"

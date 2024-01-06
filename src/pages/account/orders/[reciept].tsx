@@ -10,6 +10,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
 import { axiosPublic } from '../../../../axios';
 import Head from 'next/head';
+import Image from 'next/image';
 
 type ServerSideProps = {
     reciept: string
@@ -109,7 +110,7 @@ const OrderDetailPage:NextPageWithLayout<InferGetServerSidePropsType<typeof getS
                                                     <tr key={index}>
                                                         <td className="product-thumbnail">
                                                         {item.featured_image_link && <Link href={`/products/${item.slug}`}>
-                                                            <img
+                                                            <Image width={116} height={125}
                                                             src={item.featured_image_link}
                                                             style={{ width: "70px", height: "50px", objectFit:'contain' }}
                                                             alt=""

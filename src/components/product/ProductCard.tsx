@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useCart } from "@/context/CartProvider";
 import QuantityMain from "../cart/QuantityMain";
 import { useWishlist } from "@/context/WishlistProvider";
+import Image from "next/image";
 
 type Props = {
   product: ProductSegmentState;
@@ -50,7 +51,7 @@ const ProductCard = ({ product }: Props) => {
                     {
                         product.featured_image_link &&
                         <Link href={`/products/${product.slug}`}>
-                            <img
+                            <Image priority={false}
                                 src={product.featured_image_link}
                                 alt="product-img"
                                 width={500}
