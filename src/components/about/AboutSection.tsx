@@ -63,13 +63,13 @@ const AboutSection = () => {
               </div>
               <div className="bd-about__quite-box">
                 <div className="quite-content">
-                  <p>{`"Organic foods are very helpful to our human body"`}</p>
+                  <p>{`"Go Organic, Be Organic, Live Organic"`}</p>
                 </div>
                 <div className="quite-icon">
                   <i className="flaticon-quote"></i>
                 </div>
                 <div className="bd-about__quite-name">
-                  <span>Daniel Nirob</span>
+                  <span>JAP</span>
                 </div>
               </div>
               <div className="bd-about__shape-1">

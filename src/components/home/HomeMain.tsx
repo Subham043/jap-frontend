@@ -1,7 +1,6 @@
 import React from 'react';
 import HeroSection from './HeroSection';
 import ServiceSection from './ServiceSection';
-import AboutSection from '../about/AboutSection';
 import ProductSlider from './ProductSlider';
 import ChooseSection from './ChooseSection';
 import FactSection from './FactSection';
@@ -13,7 +12,7 @@ const HomeMain = () => {
     return (
         <>
             <HeroSection/>
-            <ServiceSection/>
+            {/* <ServiceSection/> */}
             <ProductSlider title='Our Featured Products' segment='is_featured'/>
             <ChooseSection/>
             <ProductSlider title='Our New Products' segment='is_new_arrival'/>

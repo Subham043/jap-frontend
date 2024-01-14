@@ -46,6 +46,7 @@ const FactSection = () => {
                                 </div>
                             </div>
                         ))}
+                        <span className="bd-counter-shape-line-2"></span>
                     </div>
                 </div>
             </div>
