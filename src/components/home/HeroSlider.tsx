@@ -1,5 +1,5 @@
-const thumbOne = "/assets/img/banner/slider/b1.webp"
-const thumbTow = "/assets/img/banner/slider/b2.webp"
+const thumbOne = "/assets/img/banner/slider/b6.webp"
+const thumbTow = "/assets/img/banner/slider/b5.webp"
 const thumbThree = "/assets/img/banner/slider/b3.webp"
 const thumbFour = "/assets/img/banner/slider/b4.webp"
 import Image from "next/image";
