@@ -57,6 +57,7 @@ export interface ProductSegmentState<> {
     is_new_arrival: boolean
     other_images: ProductOtherImagesState[]|[]
     price: number
+    weight: string
     reviews: ProductReviewState[]|[],
     categories: []|CategoryState[]
 }

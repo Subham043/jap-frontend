@@ -262,10 +262,10 @@ export const galleryData:{
         id: 65,
         type: 2
     },
-    {
-        id: 66,
-        type: 2
-    },
+    // {
+    //     id: 66,
+    //     type: 2
+    // },
     {
         id: 67,
         type: 1

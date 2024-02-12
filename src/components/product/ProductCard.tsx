@@ -106,11 +106,11 @@ const ProductCard = ({ product }: Props) => {
 
                         {product.discounted_price % 1 === 0 ? (
                             <span className="bd-product__new-price">
-                                &#8377;{`${product.discounted_price}.00`}
+                                &#8377;{`${product.discounted_price}.00 / ${product.weight}`}
                             </span>
                         ) : (
                             <span className="bd-product__new-price">
-                                &#8377;{product.discounted_price.toFixed(2)}
+                                &#8377;{product.discounted_price.toFixed(2)} / {product.weight}
                             </span>
                         )}
                     </div>

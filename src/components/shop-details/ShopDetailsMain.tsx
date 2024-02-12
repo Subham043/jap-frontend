@@ -176,8 +176,9 @@ const ShopDetailsMain = ({ product }: Props) => {
                       </div>
                       <h3>{product.name}</h3>
                       <div className="product-price">
+                        {product?.price !== product?.discounted_price && <><del>&#8377;{product.discounted_price}.00</del>&nbsp;</>}
                         <span>&#8377;{product.price}.00</span>
-                        {product?.price !== product?.discounted_price && <del>&#8377;{product.discounted_price}.00</del>}
+                        / {product?.weight}
                       </div>
                       {product.categories.length>0 && <div className="modal-product-meta bd__product-details-menu-1">
                         <ul>
