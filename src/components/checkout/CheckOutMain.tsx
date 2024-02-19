@@ -468,7 +468,7 @@ const CheckOutMain = () => {
                               <td className="product-name">
                                 {item.name}&nbsp;
                                 <strong className="product-quantity">
-                                  ({item.quantity} pcs. × &#8377;{item?.discounted_price})
+                                  ({item.quantity} × &#8377;{item?.discounted_price} / {item?.weight})
                                 </strong>
                               </td>
                               <td className="product-total">
@@ -479,18 +479,18 @@ const CheckOutMain = () => {
                         })}
                       </tbody>
                       {cart && <tfoot>
-                        <tr className="cart-subtotal">
+                        {/* <tr className="cart-subtotal">
                           <th>Cart Subtotal</th>
                           <td>
                             <span className="amount">&#8377;{cart.sub_total}</span>
                           </td>
-                        </tr>
-                        <tr className="cart-subtotal">
+                        </tr> */}
+                        {/* <tr className="cart-subtotal">
                           <th>Total Discount</th>
                           <td>
                             <span className="amount">- &#8377;{cart.total_discount}</span>
                           </td>
-                        </tr>
+                        </tr> */}
                         <tr className="cart-subtotal">
                           <th>Delivery Charge</th>
                           <td>

@@ -10,13 +10,14 @@ type Props = {
     featured_image_link?: string;
     quantity: number;
     total_quantity_price: number;
+    weight: string;
     loading: boolean;
     deleteHandler?: (data:number) => void
     incrementProductQuantity?: (product_id:number) => Promise<void>
     decrementProductQuantity?: (product_id:number) => Promise<void>
 }
 
-const CartProductCard = ({ id, slug, featured_image_link, name, total_quantity_price, quantity, loading, deleteHandler, incrementProductQuantity, decrementProductQuantity }: Props) => {
+const CartProductCard = ({ id, slug, featured_image_link, name, weight, total_quantity_price, quantity, loading, deleteHandler, incrementProductQuantity, decrementProductQuantity }: Props) => {
     const { setOpenCart } = useGlobalContext();
     const [quantityLoading, setQuantityLoading] = useState<boolean>(false);
     

@@ -10,13 +10,14 @@ type Props = {
     quantity: number;
     total_quantity_price: number;
     discounted_price: number;
+    weight: string;
     loading: boolean;
     deleteHandler?: (data:number) => void
     incrementProductQuantity?: (product_id:number) => Promise<void>
     decrementProductQuantity?: (product_id:number) => Promise<void>
 }
 
-const CartTableCard = ({ id, slug, featured_image_link, name, total_quantity_price, discounted_price, quantity, loading, deleteHandler, incrementProductQuantity, decrementProductQuantity }: Props) => {
+const CartTableCard = ({ id, slug, featured_image_link, name, weight, total_quantity_price, discounted_price, quantity, loading, deleteHandler, incrementProductQuantity, decrementProductQuantity }: Props) => {
     const [quantityLoading, setQuantityLoading] = useState<boolean>(false);
     
     const deleteClickHandler = () => {
@@ -55,7 +56,7 @@ const CartTableCard = ({ id, slug, featured_image_link, name, total_quantity_pri
       </Link>
     </td>
     <td className="product-price">
-      <span className="amount">&#8377;{discounted_price}</span>
+      <span className="amount">&#8377;{discounted_price} / {weight}</span>
     </td>
     <td className="product-quantity text-center">
         <div className="product-quantity mt-10 mb-10">

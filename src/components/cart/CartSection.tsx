@@ -54,7 +54,7 @@ const CartSection = () => {
                      
                       {cart.products.map((item, index) => {
                         return(
-                          <CartTableCard id={item.id} discounted_price={item.discounted_price} slug={item.slug} name={item.name} featured_image_link={item.featured_image_link} quantity={item.quantity} total_quantity_price={item.total_quantity_price} deleteHandler={removeCartHandler} incrementProductQuantity={incrementProductQuantity} decrementProductQuantity={decrementProductQuantity} loading={loading} key={index}/>
+                          <CartTableCard id={item.id} discounted_price={item.discounted_price} slug={item.slug} name={item.name} weight={item.weight} featured_image_link={item.featured_image_link} quantity={item.quantity} total_quantity_price={item.total_quantity_price} deleteHandler={removeCartHandler} incrementProductQuantity={incrementProductQuantity} decrementProductQuantity={decrementProductQuantity} loading={loading} key={index}/>
                         )
                       }
                         
@@ -67,21 +67,21 @@ const CartSection = () => {
                     <div className="cart-page-total">
                       <h2 className="text-center">Cart totals</h2>
                       <ul className="mb-20">
-                        <li>
+                        {/* <li>
                           Subtotal <span>&#8377; {cart.sub_total}</span>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                           Total Discount <span>- &#8377; {cart.total_discount}</span>
-                        </li>
+                        </li> */}
                         <li>
                           GST <span>+ &#8377; {cart.gst_charge}</span>
                         </li>
                         <li>
                           Delivery Charge <span>+ &#8377; {cart.delivery_charge}</span>
                         </li>
-                        <li>
+                        {/* <li>
                           Cumulative Total <span>&#8377; {cart.sub_total}</span>
-                        </li>
+                        </li> */}
                         <li>
                           Coupon Discount <span>- &#8377; {cart.coupon_discount}</span>
                         </li>

@@ -5,6 +5,7 @@ import { useCart } from "@/context/CartProvider";
 import QuantityMain from "../cart/QuantityMain";
 import { useWishlist } from "@/context/WishlistProvider";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 type Props = {
   product: ProductSegmentState;
@@ -16,6 +17,7 @@ const ProductCard = ({ product }: Props) => {
     const {incrementProductQuantity, decrementProductQuantity, cart} = useCart();
     const {wishlist, wishlistHandler} = useWishlist();
     const [wishlistLoading, setWishlistLoading] = useState<boolean>(false);
+    const { status } = useSession();
     
     const incrementQuantity = async () => {
         try {
@@ -89,32 +91,34 @@ const ProductCard = ({ product }: Props) => {
                         {product.name}
                         </Link>
                     </h4>
-                    <div className="bd-product__price">
-                        {product?.price !== product?.discounted_price ? (
-                        <span className="bd-product__old-price">
-                            <del>&#8377;
-                            {`${
-                                product.price % 1 === 0
-                                ? `${product.price}.00`
-                                : product.price.toFixed(2)
-                            }`}
-                            </del>
-                        </span>
-                        ) : (
-                        <></>
-                        )}
-
-                        {product.discounted_price % 1 === 0 ? (
-                            <span className="bd-product__new-price">
-                                &#8377;{`${product.discounted_price}.00 / ${product.weight}`}
+                    {
+                        status==='authenticated' &&
+                        <div className="bd-product__price">
+                            {product?.price !== product?.discounted_price ? (
+                            <span className="bd-product__old-price">
+                                <del>&#8377;
+                                {`${
+                                    product.price % 1 === 0
+                                    ? `${product.price}.00`
+                                    : product.price.toFixed(2)
+                                }`}
+                                </del>
                             </span>
-                        ) : (
-                            <span className="bd-product__new-price">
-                                &#8377;{product.discounted_price.toFixed(2)} / {product.weight}
-                            </span>
-                        )}
-                    </div>
+                            ) : (
+                            <></>
+                            )}
 
+                            {product.discounted_price % 1 === 0 ? (
+                                <span className="bd-product__new-price">
+                                    &#8377;{`${product.discounted_price}.00 / ${product.weight}`}
+                                </span>
+                            ) : (
+                                <span className="bd-product__new-price">
+                                    &#8377;{product.discounted_price.toFixed(2)} / {product.weight}
+                                </span>
+                            )}
+                        </div>
+                    }
                     <QuantityMain 
                         loading={loading} 
                         quantity={cart ? (cart.products.filter(item => item.id===product.id).length>0 ? cart.products.filter(item => item.id===product.id)[0].quantity : 0) : 0} 

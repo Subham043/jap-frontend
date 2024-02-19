@@ -110,6 +110,7 @@ export interface CartProducts<> {
     is_new_arrival: boolean
     price: number
     quantity: number
+    weight: string
     total_quantity_price: number
     categories: []|CategoryState[]
 }

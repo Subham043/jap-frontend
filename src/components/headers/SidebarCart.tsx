@@ -49,7 +49,7 @@ const SidebarCart = () => {
                     <ul>
                       {cart.products.map((item, index) => {
                         return (
-                          <CartProductCard id={item.id} slug={item.slug} name={item.name} featured_image_link={item.featured_image_link} quantity={item.quantity} total_quantity_price={item.total_quantity_price} deleteHandler={removeCartHandler} incrementProductQuantity={incrementProductQuantity} decrementProductQuantity={decrementProductQuantity} loading={loading} key={index}/>
+                          <CartProductCard id={item.id} slug={item.slug} name={item.name} featured_image_link={item.featured_image_link} quantity={item.quantity} weight={item.weight} total_quantity_price={item.total_quantity_price} deleteHandler={removeCartHandler} incrementProductQuantity={incrementProductQuantity} decrementProductQuantity={decrementProductQuantity} loading={loading} key={index}/>
                         );
                       })}
                     </ul>
@@ -57,7 +57,7 @@ const SidebarCart = () => {
                   <div className="cartmini__checkout">
                     <div className="cartmini__checkout-title mb-30">
                       <h4>Subtotal:</h4>
-                      <span className="subtotal-price">&#8377; {cart.sub_total}</span>
+                      <span className="subtotal-price">&#8377; {cart.total_price_with_coupon_dicount}</span>
                     </div>
                     <div className="cartmini__checkout-btn">
                       <Link onClick={() => setOpenCart(false)} className="bd-fill__btn w-100" href="/cart">

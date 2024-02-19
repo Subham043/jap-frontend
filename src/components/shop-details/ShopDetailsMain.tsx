@@ -15,6 +15,7 @@ import QuantityMain from "../cart/QuantityMain";
 import { useCart } from "@/context/CartProvider";
 import { useWishlist } from "@/context/WishlistProvider";
 import { Swiper as SwiperType } from "swiper/types";
+import { useSession } from "next-auth/react";
 
 type Props = {
   product: ProductSegmentState
@@ -26,6 +27,7 @@ const ShopDetailsMain = ({ product }: Props) => {
   const {incrementProductQuantity, decrementProductQuantity, cart} = useCart();
   const {wishlist, wishlistHandler} = useWishlist();
   const [wishlistLoading, setWishlistLoading] = useState<boolean>(false);
+  const { status } = useSession();
 
   const incrementQuantity = async () => {
     try {
@@ -175,11 +177,14 @@ const ShopDetailsMain = ({ product }: Props) => {
                         </ul>
                       </div>
                       <h3>{product.name}</h3>
-                      <div className="product-price">
-                        {product?.price !== product?.discounted_price && <><del>&#8377;{product.discounted_price}.00</del>&nbsp;</>}
-                        <span>&#8377;{product.price}.00</span>
-                        / {product?.weight}
-                      </div>
+                      {
+                        status==='authenticated' &&
+                        <div className="product-price">
+                          {product?.price !== product?.discounted_price && <><del>&#8377;{product.discounted_price}.00</del>&nbsp;</>}
+                          <span>&#8377;{product.price}.00</span>
+                          / {product?.weight}
+                        </div>
+                      }
                       {product.categories.length>0 && <div className="modal-product-meta bd__product-details-menu-1">
                         <ul>
                           <li>
