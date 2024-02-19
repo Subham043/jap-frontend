@@ -148,21 +148,21 @@ const OrderDetailPage:NextPageWithLayout<InferGetServerSidePropsType<typeof getS
                                         <div className="cart-page-total">
                                             <h2 className="text-center">Order totals</h2>
                                             <ul className="mb-20">
-                                                <li>
+                                                {/* <li>
                                                 Subtotal <span>&#8377; {order.sub_total}</span>
                                                 </li>
                                                 <li>
                                                 Total Discount <span>- &#8377; {order.total_discount}</span>
-                                                </li>
+                                                </li> */}
                                                 <li>
                                                 GST <span>+ &#8377; {order.gst_charge}</span>
                                                 </li>
                                                 <li>
                                                 Delivery Charge <span>+ &#8377; {order.delivery_charge}</span>
                                                 </li>
-                                                <li>
+                                                {/* <li>
                                                 Cumulative Total <span>&#8377; {order.sub_total}</span>
-                                                </li>
+                                                </li> */}
                                                 <li>
                                                 Coupon Discount <span>- &#8377; {order.coupon_discount}</span>
                                                 </li>
