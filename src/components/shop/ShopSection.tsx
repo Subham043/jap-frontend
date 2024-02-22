@@ -25,13 +25,15 @@ const ShopSection = () => {
   const [searchValue, setSearchValue] = useState<string>("");
   const [segment, setSegment] = useState<string>(searchParams.get('filter') ? `&filter[${searchParams.get('filter')}]=true`: '')
   const [segmentDefault, setSegmentDefault] = useState<number>(segments.findIndex(item => item.api===`&filter[${searchParams.get('filter')}]=true`)<0 ? 0 : segments.findIndex(item => item.api===`&filter[${searchParams.get('filter')}]=true`))
-  const [categorySelected, setCategorySelected] = useState<string>('')
+  const [categorySelected, setCategorySelected] = useState<string>(searchParams.get('category') || '')
   const [ratingSelected, setRatingSelected] = useState<string>('')
   
-  
+  useEffect(()=>{
+    setCategorySelected(searchParams.get('category') || '')
+  }, [searchParams])
   const getProductKey = useCallback((pageIndex:any, previousPageData:any) => {
       if (previousPageData && previousPageData.length===0) return null;
-      return `${api_routes.products}?total=${PAGE_SIZE}&page=${pageIndex+1}&sort=-id${searchValue ? '&filter[search]='+searchValue : ''}${segment.length>0 ? segment : ''}${categorySelected}${ratingSelected}`;
+      return `${api_routes.products}?total=${PAGE_SIZE}&page=${pageIndex+1}&sort=-id${searchValue ? '&filter[search]='+searchValue : ''}${segment.length>0 ? segment : ''}${categorySelected && categorySelected.length>0 ? '&filter[has_categories]='+categorySelected : ''}${ratingSelected}`;
   }, [searchValue, segment, categorySelected, ratingSelected])
   
   const {

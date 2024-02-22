@@ -100,7 +100,7 @@ const CartProvider: React.FC<ChildrenType> = ({children}) => {
           await updateCart([...cart_main.map(item => {return {product_id:item.product_id, quantity: item.quantity}})])
         }else{
           await updateCart([{quantity:1, product_id: product_id},...cart_main.map(item => {return {product_id:item.product_id, quantity: item.quantity}})])
-          toastSuccess('Product Added To Cart');
+          // toastSuccess('Product Added To Cart');
         }
       }else{
         toastError('Please login to add product to cart');
@@ -116,7 +116,7 @@ const CartProvider: React.FC<ChildrenType> = ({children}) => {
           if(cart_main[products_item_index].quantity===1){
             const cart_item_removed = cart_main.filter(item => item.product_id!==product_id)
             await updateCart([...cart_item_removed.map(item => {return {product_id:item.product_id, quantity: item.quantity}})])
-            toastSuccess('Product Removed From Cart');
+            // toastSuccess('Product Removed From Cart');
           }else{
             cart_main[products_item_index].quantity = Math.max(1, cart_main[products_item_index].quantity-1)
             await updateCart([...cart_main.map(item => {return {product_id:item.product_id, quantity: item.quantity}})])

@@ -20,7 +20,7 @@ const Sidebar = () => {
                   <div className="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
                     <div className="offcanvas__logo logo">
                       <Link href="/">
-                        <Image width={116} height={125} src='/assets/img/logo/new-logo.png' alt="logo" style={{height: '90px', objectFit: 'contain'}} />
+                        <Image width={116} height={125} src='/assets/img/logo/new-logo.webp' alt="logo" style={{height: '90px', objectFit: 'contain'}} />
                       </Link>
                     </div>
                     <div className="offcanvas__close">

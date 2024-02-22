@@ -206,10 +206,25 @@ const ContactForm = () => {
                         </div>
                         <div className="bd-contact__content">
                           <div className="bd-contact__title">
-                            <h4>Location</h4>
+                            <h4>Regd office</h4>
                           </div>
                           <p>
                             Salivaram PO, Denkanikottai, Tamil Nadu - 635107
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bd-contact__item">
+                      <div className="bd-contact__item-list">
+                        <div className="bd-contact__icon">
+                          <LocationIcon />
+                        </div>
+                        <div className="bd-contact__content">
+                          <div className="bd-contact__title">
+                            <h4>Business office</h4>
+                          </div>
+                          <p>
+                          7, 2nd Cross Diagonal Road, Jayanagar 3rd Block, Bengaluru - 560011
                           </p>
                         </div>
                       </div>

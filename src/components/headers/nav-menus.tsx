@@ -20,11 +20,13 @@ const nav_menus_list:NavMenuItem[] = [
   {id:2,
     link: '/about',
     title: 'About Us',
-  },
-  {id:3,
-    link: '/products',
-    title: 'Products',
-  },
+  }
+]
+export const nav_menus_list2:NavMenuItem[] = [
+  // {id:3,
+  //   link: '/products',
+  //   title: 'Products',
+  // },
   {id:4,
     link: '/certifications',
     title: 'Certifications',

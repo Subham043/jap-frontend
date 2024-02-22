@@ -90,11 +90,11 @@ const WishlistProvider: React.FC<ChildrenType> = ({children}) => {
             if(wishlist){
                 if([...wishlist.products.map(item=>item.id)].indexOf(id)<0){
                     await updateWishlist([id, ...wishlist.products.map(item=>item.id)])
-                    toastSuccess('Product added to wishlist');
+                    // toastSuccess('Product added to wishlist');
                 } else{
                     const filteredWishlist = wishlist.products.filter(item=> item.id!=id);
                     await updateWishlist([...filteredWishlist.map(item=>item.id)])
-                    toastSuccess('Product removed from wishlist');
+                    // toastSuccess('Product removed from wishlist');
                 }
             }
         }catch (error: any) {

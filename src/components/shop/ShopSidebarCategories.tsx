@@ -83,7 +83,7 @@ const ShopSidebarCategories = ({setCategorySelected}:Props) => {
                       type="radio"
                       id={item.slug}
                       name="category"
-                      value={`&filter[has_categories]=${item.slug}`}
+                      value={`${item.slug}`}
                       onChange={(e)=>setCategorySelected(e.target.value)}
                     />
                     <label className="radio-star" htmlFor={item.slug}>

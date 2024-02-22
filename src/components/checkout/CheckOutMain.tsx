@@ -187,7 +187,7 @@ const CheckOutMain = () => {
       currency: "INR",
       name: "JAP",
       description: "Payment For Order Reciept: " + order.receipt,
-      image: "https://jap.bio/assets/img/logo/new-logo.png",
+      image: "https://jap.bio/assets/img/logo/new-logo.webp",
       order_id: order.razorpay_order_id ? order.razorpay_order_id : '', //This is a sample Order ID. Pass the `id` obtained in the response of createOrder().
       handler: function (response:any) {
         verifyOnlinePayment({

@@ -51,7 +51,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
               <title>JAP - Home</title>
               <meta name="description" content="JAP-PCL was created as a multi-state farmers producer company, started by shareholder-member farmers from Karnataka, Tamil Nadu, Kerala and Andhra Pradesh. All these farmers practice only organic farming or natural farming, and hence the names, jaivik (organic) and pratrutik (natural)." />
               <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <link rel="icon" href="/assets/img/logo/new-logo.png" />
+              <link rel="icon" href="/assets/img/logo/new-logo.webp" />
             </Head>
             <Header/>
             {getLayout(<Component {...pageProps} />)}

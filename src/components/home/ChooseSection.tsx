@@ -7,8 +7,10 @@ import thumb3 from "../../../public/assets/img/why-choose/3-min.png"
 import thumb4 from "../../../public/assets/img/why-choose/4-min.png"
 import thumb5 from "../../../public/assets/img/why-choose/pl1.png"
 import thumb6 from "../../../public/assets/img/why-choose/pl2.png"
+import { useRouter } from "next/navigation";
 
 const ChooseSection = () => {
+  const route = useRouter()
   return (
     <section className="bd-why-choose__area grey-bg-2 pt-55 pb-55">
       <div className="container">
@@ -24,7 +26,7 @@ const ChooseSection = () => {
         </div>
         <div className="row g-0 align-items-center justify-content-center">
           <div className="col-xl-5 col-lg-5 col-md-12 d-flex flex-wrap p-relative">
-            <button className="bd-choose__thumb text-center w-50 p-relative about-category-btn">
+            <button className="bd-choose__thumb text-center w-50 p-relative about-category-btn" onClick={()=>route.push('/products?category=pulses')}>
               <Image
                 src={thumb1}
                 alt="choose-big"
@@ -33,7 +35,7 @@ const ChooseSection = () => {
                 style={{ width: "100%", height: "auto" }}
               />
             </button>
-            <button className="bd-choose__thumb text-center w-50 about-category-btn">
+            <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=vegetables')}>
               <Image
                 src={thumb2}
                 alt="choose-big"
@@ -42,7 +44,7 @@ const ChooseSection = () => {
                 style={{ width: "100%", height: "auto" }}
               />
             </button>
-            <button className="bd-choose__thumb text-center w-50 about-category-btn">
+            <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=pulses')}>
               <Image
                 src={thumb4}
                 alt="choose-big"
@@ -51,7 +53,7 @@ const ChooseSection = () => {
                 style={{ width: "100%", height: "auto" }}
               />
             </button>
-            <button className="bd-choose__thumb text-center w-50 about-category-btn">
+            <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=fruits')}>
               <Image
                 src={thumb3}
                 alt="choose-big"
@@ -61,7 +63,7 @@ const ChooseSection = () => {
               />
             </button>
             <div className="d-flex col-auto about-section-image-center">
-              <button className="bd-choose__thumb text-center w-50 p-relative about-category-btn">
+              <button className="bd-choose__thumb text-center w-50 p-relative about-category-btn" onClick={()=>route.push('/products?category=spices')}>
                 <Image
                   src={thumb5}
                   alt="choose-big"
@@ -70,7 +72,7 @@ const ChooseSection = () => {
                   style={{ width: "100%", height: "auto" }}
                 />
               </button>
-              <button className="bd-choose__thumb text-center w-50 about-category-btn">
+              <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=spices')}>
                 <Image
                   src={thumb6}
                   alt="choose-big"

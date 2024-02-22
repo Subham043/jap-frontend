@@ -7,7 +7,7 @@ import discover from "../../../public/assets/img/icon/discover.png";
 import masterCard from "../../../public/assets/img/icon/mastercard.png";
 import paypal from "../../../public/assets/img/icon/paypal.png";
 import visa from "../../../public/assets/img/icon/visa.png";
-import logo from "../../../public/assets/img/logo/new-logo.png";
+import logo from "../../../public/assets/img/logo/new-logo.webp";
 import android from "../../../public/assets/img/playstore.png";
 import ios from "../../../public/assets/img/applestore.png";
 
