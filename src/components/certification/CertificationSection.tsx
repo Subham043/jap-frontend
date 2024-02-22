@@ -7,7 +7,7 @@ import Image from "next/image";
 const CertificationSection = () => {
   
   return (
-    <section className="bd-about__area pt-50 pb-35">
+    <section className="bd-about__area pt-20 pb-35">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-xxl-4 col-xl-4 col-lg-4">
