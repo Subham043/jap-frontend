@@ -49,6 +49,9 @@
 	&__title {
 		color: var(--clr-common-heading);
 		margin-bottom: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		a {
 			&:hover {
 				color: var(--clr-theme-1);

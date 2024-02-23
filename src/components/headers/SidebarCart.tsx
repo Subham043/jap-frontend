@@ -14,7 +14,7 @@ const SidebarCart = () => {
     try{
       setLoading(true)
       await removeCartItem(product_id);
-      toastSuccess('Item removed from cart')
+      // toastSuccess('Item removed from cart')
     }finally{
       setLoading(false)
     }
