@@ -79,7 +79,7 @@ const MobileMenu = () => {
             className={`sub-menu ${submenuOpen === 7 && open === true ? "active" : ""}`}
           >
             {
-              categoryData?.flat().map((item, index) => <li key={index}><Link onClick={() => safeSetShowSidebar(false)} href={`/products?category=${item.slug}`}>{item.name}</Link></li>)
+              categoryData?.flat().map((item, index) => (item.name!=='O2C' && item.name!=='o2c' && item.name!=='Fruits' && item.name!=='fruits' && item.name!=='Vegetables' && item.name!=='vegetables') && <li key={index}><Link onClick={() => safeSetShowSidebar(false)} href={`/products?category=${item.slug}`}>{item.name}</Link></li>)
             }
           </ul>
         </li>
@@ -93,13 +93,13 @@ const MobileMenu = () => {
             className={`sub-menu ${submenuOpen === 8 && open === true ? "active" : ""}`}
           >
             <li>
+              <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=o2c'>O2C</Link>
+            </li>
+            <li>
               <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=vegetables'>Vegetables</Link>
             </li>
             <li>
               <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=fruits'>Fruits</Link>
-            </li>
-            <li>
-              <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=o2c'>O2C</Link>
             </li>
           </ul>
         </li>

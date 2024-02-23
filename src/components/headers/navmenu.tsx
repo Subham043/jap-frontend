@@ -53,7 +53,7 @@ const NavMenu = () => {
                     <Link href='/products'>Exports</Link>
                     <ul className="submenu">
                         {
-                            categoryData?.flat().map((item, index) => <li key={index}><Link href={`/products?category=${item.slug}`}>{item.name}</Link></li>)
+                            categoryData?.flat().map((item, index) => (item.name!=='O2C' && item.name!=='o2c' && item.name!=='Fruits' && item.name!=='fruits' && item.name!=='Vegetables' && item.name!=='vegetables') && <li key={index}><Link href={`/products?category=${item.slug}`}>{item.name}</Link></li>)
                         }
                     </ul>
                 </li>
