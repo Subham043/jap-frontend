@@ -27,7 +27,7 @@ const Footer = () => {
                     </Link>
                   </div>
                   <p>
-                    JVK Organics takes pride in delivering a wide variety of fresh and certified organic vegetables, fruits, eggs, and meats right to your doorstep.
+                    JAP & O2C takes pride in delivering a wide range of fresh and certified organic products at your doorstep.
                   </p>
                   <div className="bd-footer__contact">
                     <span>

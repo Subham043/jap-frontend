@@ -1,7 +1,7 @@
-const thumbOne = "/assets/img/banner/slider/b9.jpeg"
-const thumbTow = "/assets/img/banner/slider/b10.jpeg"
-const thumbThree = "/assets/img/banner/slider/b8.jpeg"
-const thumbFour = "/assets/img/banner/slider/b7.jpeg"
+const thumbOne = "/assets/img/banner/slider/1.webp"
+const thumbTow = "/assets/img/banner/slider/2.webp"
+const thumbThree = "/assets/img/banner/slider/3.webp"
+const thumbFour = "/assets/img/banner/slider/4.webp"
 import Image from "next/image";
 import Slider from "react-slick";
 

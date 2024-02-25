@@ -13,11 +13,11 @@ const HomeMain = () => {
         <>
             <HeroSection/>
             {/* <ServiceSection/> */}
-            <ProductSlider title='Our Featured Products' segment='is_featured'/>
+            <ProductSlider title='Our Bulk Offers' segment='is_featured'/>
             <ChooseSection/>
-            <ProductSlider title='Our New Products' segment='is_new_arrival'/>
+            <ProductSlider title='Our Bulk Offers' segment='is_new_arrival'/>
             <FactSection/>
-            <ProductSlider title='On Sale Products' segment='is_best_sale'/>
+            {/* <ProductSlider title='On Sale Products' segment='is_best_sale'/> */}
         </>
     );
 };

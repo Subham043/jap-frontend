@@ -8,11 +8,11 @@ export const galleryData:{
     },
     {
         id: 2,
-        type: 2
+        type: 3
     },
     {
         id: 3,
-        type: 2
+        type: 3
     },
     {
         id: 4,
@@ -20,19 +20,19 @@ export const galleryData:{
     },
     {
         id: 5,
-        type: 1
+        type: 3
     },
     {
         id: 6,
-        type: 1
+        type: 3
     },
     {
         id: 7,
-        type: 2
+        type: 3
     },
     {
         id: 8,
-        type: 2
+        type: 3
     },
     {
         id: 9,
@@ -44,11 +44,11 @@ export const galleryData:{
     },
     {
         id: 11,
-        type: 1
+        type: 3
     },
     {
         id: 12,
-        type: 2
+        type: 3
     },
     {
         id: 13,
@@ -56,7 +56,7 @@ export const galleryData:{
     },
     {
         id: 14,
-        type: 1
+        type: 3
     },
     {
         id: 15,
@@ -64,11 +64,11 @@ export const galleryData:{
     },
     {
         id: 16,
-        type: 1
+        type: 3
     },
     {
         id: 17,
-        type: 1
+        type: 3
     },
     {
         id: 18,
@@ -84,7 +84,7 @@ export const galleryData:{
     },
     {
         id: 21,
-        type: 1
+        type: 3
     },
     {
         id: 22,
@@ -96,7 +96,7 @@ export const galleryData:{
     },
     {
         id: 24,
-        type: 1
+        type: 3
     },
     {
         id: 25,
@@ -108,7 +108,7 @@ export const galleryData:{
     },
     {
         id: 27,
-        type: 1
+        type: 3
     },
     {
         id: 28,
@@ -124,11 +124,11 @@ export const galleryData:{
     },
     {
         id: 31,
-        type: 1
+        type: 3
     },
     {
         id: 32,
-        type: 1
+        type: 3
     },
     {
         id: 33,
@@ -140,7 +140,7 @@ export const galleryData:{
     },
     {
         id: 35,
-        type: 1
+        type: 3
     },
     {
         id: 36,
@@ -152,7 +152,7 @@ export const galleryData:{
     },
     {
         id: 38,
-        type: 1
+        type: 3
     },
     {
         id: 39,
@@ -160,7 +160,7 @@ export const galleryData:{
     },
     {
         id: 40,
-        type: 1
+        type: 3
     },
     {
         id: 41,
@@ -172,7 +172,7 @@ export const galleryData:{
     },
     {
         id: 43,
-        type: 1
+        type: 3
     },
     {
         id: 44,
@@ -184,7 +184,7 @@ export const galleryData:{
     },
     {
         id: 46,
-        type: 1
+        type: 3
     },
     {
         id: 47,
@@ -192,7 +192,7 @@ export const galleryData:{
     },
     {
         id: 48,
-        type: 1
+        type: 3
     },
     {
         id: 49,
@@ -216,7 +216,7 @@ export const galleryData:{
     },
     {
         id: 54,
-        type: 1
+        type: 3
     },
     {
         id: 55,
@@ -236,7 +236,7 @@ export const galleryData:{
     },
     {
         id: 59,
-        type: 1
+        type: 3
     },
     {
         id: 60,
@@ -276,7 +276,7 @@ export const galleryData:{
     },
     {
         id: 69,
-        type: 1
+        type: 3
     },
     {
         id: 70,
@@ -320,7 +320,7 @@ export const galleryData:{
     },
     {
         id: 80,
-        type: 1
+        type: 3
     },
     {
         id: 81,
@@ -360,7 +360,7 @@ export const galleryData:{
     },
     {
         id: 90,
-        type: 1
+        type: 3
     },
     {
         id: 91,
@@ -376,7 +376,7 @@ export const galleryData:{
     },
     {
         id: 94,
-        type: 1
+        type: 3
     },
     {
         id: 95,
@@ -396,7 +396,7 @@ export const galleryData:{
     },
     {
         id: 99,
-        type: 1
+        type: 3
     },
     {
         id: 100,

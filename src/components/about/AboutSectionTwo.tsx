@@ -26,7 +26,7 @@ const AboutSectionTwo = () => {
                 <div className="bd-about__info">
                   <p>We represent 1751 farmers in 14 groups, all ‘certified organic’, managed through ICS (Internal Control System) and registered with the APEDA accredited Organic Certification Body as per NPOP/EU and/or NOP organic standards. JAP-PCL started business in 2022 by marketing fruits and vegetables produced by its farmers from the 14 groups in the markets of Bangalore. And soon after, it started bulk procurement and supplying organic red chilli, turmeric etc. to exporters.
 By next year or two, the producer company plans to establish a processing unit to enable value-addition of farmer producers closest to the site of production, and thereby help these farmers get the lion’s share of market value farmers, as well as offer organic high-quality products to its buyers/markets.
-In its first year of operations, JAP reached a turnover of INR.118 million (USD. 1.5 million) largely with organic red chillies, fruits & vegetables.
+<br/><br/>In its first year of operations, JAP reached a turnover of INR.118 million (USD. 1.5 million) largely with organic red chillies, fruits & vegetables.
 The company, today is procuring and supplying products to domestic companies in bulk and looking forward to starting retail packing and to entering international markets (exports) as well. JAP PCL targets crossing Rs.500 million in FY 2024-25.</p>
                 </div>
               </div>

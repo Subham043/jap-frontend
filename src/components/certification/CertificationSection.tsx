@@ -81,7 +81,7 @@ const CertificationSection = () => {
             </div>
           </div>
         </div>
-        <div className="row align-items-center">
+        {/* <div className="row align-items-center">
           <div className="col-xxl-4 col-xl-4 col-lg-4">
             <div className="bd-about__wrapper">
               <div className="bd-about__image-1 m-img">
@@ -104,7 +104,7 @@ const CertificationSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

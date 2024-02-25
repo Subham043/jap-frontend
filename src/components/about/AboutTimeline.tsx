@@ -20,7 +20,7 @@ const AboutTimeline = () => {
                         width={1280}
                         height={720}
                         priority={false}
-                        src='/assets/img/about/timeline.jpeg'
+                        src='/assets/img/about/timeline.webp'
                         alt="choose-big"
                         style={{ width: "100%", height: "auto" }}
                     />

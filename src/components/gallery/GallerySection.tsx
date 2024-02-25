@@ -54,9 +54,15 @@ const GallerySection = () => {
                             >
                             Events
                             </Tab>
+                            <Tab
+                            className="nav-item nav-link show"
+                            >
+                            Marketing
+                            </Tab>
                         </TabList>
                     </nav>
                     <div>
+                        <TabPanel></TabPanel>
                         <TabPanel></TabPanel>
                         <TabPanel></TabPanel>
                         <TabPanel></TabPanel>
