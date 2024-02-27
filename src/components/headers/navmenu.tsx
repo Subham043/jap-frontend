@@ -93,7 +93,7 @@ const NavMenu = () => {
                         </li>
                     )
                 })}
-                <li className={`active`}>
+                <li className={`active blink-text`}>
                     <Link href='/what-new'>What&apos;s New</Link>
                 </li>
 

@@ -131,6 +131,23 @@ border: solid 3px transparent;
     margin-bottom: 0;
 }
 
+.blink-text a{
+    color: #699c47 !important;
+}
+.blink-text{
+   animation: blink 1s ease-in-out infinite;
+}
+
+.blink-text:hover{
+    animation: none;
+}
+
+@keyframes blink{
+    0%{opacity: .3;}
+    50%{opacity: .7;}
+    100%{opacity: 1;}
+}
+
 
 @media (max-width: 650px) {
     .grid-row{
