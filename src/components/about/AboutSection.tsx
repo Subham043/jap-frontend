@@ -27,7 +27,7 @@ const AboutSection = () => {
                   About Us
                 </h2>
                 <p>
-                  JAP-PCL was created as a multi-state farmer&apos;s producer company, started by shareholder-member farmers from Karnataka, Tamil Nadu, Kerala and Andhra Pradesh. All these farmers practice only organic farming or natural farming, and hence the names, jaivik (organic) and pratrutik (natural). These organic farmers have been certified since 2015. Later, the new PCL was joined by small holders certified groups (ICS groups – Internal Control Systems) from different districts/locations from other states, thus giving a wider basket of offerings for FPOs to connect to markets and buyers.
+                  JAP-PCL was created as a multi-state farmer&apos;s producer company, started by shareholder-member farmers from Karnataka, Tamil Nadu, Kerala and Andhra Pradesh. All these farmers practice only organic farming or natural farming, and hence the names, jaivik (organic) and pratrutik (natural).<br/><br/> These organic farmers have been certified since 2015. Later, the new PCL was joined by small holders certified groups (ICS groups – Internal Control Systems) from different districts/locations from other states, thus giving a wider basket of offerings for FPOs to connect to markets and buyers.
                 </p>
                 <p>The formation of JAP-PCL and connecting it to buyers and markets are powered and facilitated by ICCOA – International Competence Centre for Organic Agriculture as part of its strategy to incubate a farmer - producer company to maintain and carry forward the sustainable farming status and organic certification of farmer groups created by ICCOA&apos;s projects across the years.</p>
               </div>
