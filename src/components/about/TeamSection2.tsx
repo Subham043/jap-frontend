@@ -10,7 +10,7 @@ const TeamSection2 = () => {
         <div className="row">
           <div className="col-12">
             <div className="bd-section__title-wrapper text-center mb-60">
-              <span className="bd-sub__title">Professional Team</span>
+              {/* <span className="bd-sub__title">Professional Team</span> */}
               <h2 className="bd-section__title mb-30">Board Of Directors</h2>
             </div>
           </div>

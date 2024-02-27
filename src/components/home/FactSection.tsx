@@ -5,26 +5,26 @@ import CountUpContent from '../counter/CountUpContent';
 const CounterItem = [
     {
         id: 1,
-        number: 1700,
-        numberLetter: '+',
+        number: 1751,
+        numberLetter: '',
         title: 'Farmers',
     },
     {
         id: 2,
         number: 6,
-        numberLetter: '+',
+        numberLetter: '',
         title: 'States',
     },
     {
         id: 3,
         number: 3800,
-        numberLetter: '+',
+        numberLetter: '',
         title: 'Hectors of Area under Organic agriculture',
     },
     {
         id: 4,
-        number: 500,
-        numberLetter: '+',
+        number: 120,
+        numberLetter: '',
         title: 'Organic Products',
     }
 ]

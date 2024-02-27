@@ -111,7 +111,7 @@ const Footer = () => {
                     <Image src={support} alt="support-img" />
                   </div>
                   <div className="bd-footer__support-inner">
-                    <span>8:30 AM - 9:30 PM</span>
+                    {/* <span>8:30 AM - 9:30 PM</span> */}
                     <h4>
                       <Link href="tel:+919207300055">+91-9207300055</Link>
                     </h4>

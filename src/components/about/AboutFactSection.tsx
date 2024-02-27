@@ -21,7 +21,7 @@ const AboutFactSection = () => {
                             width={1280}
                             height={720}
                             priority={false}
-                            src='/assets/img/banner/slider/3.webp'
+                            src='/assets/img/banner/slider/3-new.webp'
                             alt="choose-big"
                             style={{ width: "100%", height: "auto" }}
                         />

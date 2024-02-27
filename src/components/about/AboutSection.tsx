@@ -1,23 +1,23 @@
 import React from "react";
-import thumb1 from "../../../public/assets/img/about/about-big-shape.png";
+// import thumb1 from "../../../public/assets/img/about/about-big-shape.png";
 import thumb2 from "../../../public/assets/img/about/about-icon.png";
-import thumb3 from "../../../public/assets/img/gallery/23.jpeg";
+import thumb3 from "../../../public/assets/img/gallery/53.jpeg";
 // import thumb4 from "../../../public/assets/img/about/about-img-11.jpg";
-import thumb4 from "../../../public/assets/img/gallery/76.jpeg";
-import thumb5 from "../../../public/assets/img/about/about-shape-1.png";
+import thumb4 from "../../../public/assets/img/gallery/98.jpeg";
+// import thumb5 from "../../../public/assets/img/about/about-shape-1.png";
 import Image from "next/image";
 const AboutSection = () => {
   return (
     <section className="bd-about__area grey-bg p-relative z-index-1 pt-55 pb-30">
       <div className="container">
-        <div className="bd-about__bg-wrapper p-relative">
+        {/* <div className="bd-about__bg-wrapper p-relative">
           <Image
             style={{ width: "100%", height: "auto" }}
             className="bd-about__bg-shape "
             src={thumb1}
             alt="about-big-shape"
           />
-        </div>
+        </div> */}
         <div className="row align-items-center">
           <div className="col-xl-6 col-lg-6">
             <div className="bd-about__content-wrapper mb-10">
@@ -60,7 +60,7 @@ const AboutSection = () => {
               <div className="bd-about__thumb-2">
                 <Image
                   src={thumb3}
-                  width={330}
+                  width={300}
                   height={430}
                   alt="about-img"
                   style={{ width: "330px", height: "auto" }}
@@ -77,13 +77,13 @@ const AboutSection = () => {
                   <span>JAP</span>
                 </div>
               </div>
-              <div className="bd-about__shape-1">
+              {/* <div className="bd-about__shape-1">
                 <Image
                   src={thumb5}
                   alt="about-shape"
                   style={{ width: "100%", height: "auto" }}
                 />
-              </div>
+              </div> */}
               <div className="bd-about__shape-2"></div>
               <div className="bd-about__shape-3"></div>
               <div className="bd-about__shape-4"></div>

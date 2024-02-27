@@ -17,7 +17,7 @@ const AboutSectionTwo = () => {
           <div className="col-xxl-7 col-xl-7 col-lg-6">
             <div className="bd-about__content-box mb-20">
               <div className="bd-section__title-wrapper mb-20">
-                <span className="bd-sub__title">About Us</span>
+                {/* <span className="bd-sub__title">About Us</span> */}
                 <h2 className="bd-section__title mb-10">
                   What we do
                 </h2>

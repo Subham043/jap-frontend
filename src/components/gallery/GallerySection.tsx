@@ -47,7 +47,7 @@ const GallerySection = () => {
                             <Tab
                             className="nav-item nav-link show"
                             >
-                            Farm Land
+                            Farmer
                             </Tab>
                             <Tab
                             className="nav-item nav-link show"
