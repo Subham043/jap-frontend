@@ -58,11 +58,25 @@ const NavMenu = () => {
                     </ul>
                 </li>
                 <li className={`active has-dropdown`}>
-                    <Link href='/products'>Retail</Link>
+                    <Link href='/products'>B2B</Link>
                     <ul className="submenu">
-                        <li><Link href='/products?category=o2c'>O2C</Link></li>
-                        <li><Link href='/products?category=fruits'>Fruits</Link></li>
-                        <li><Link href='/products?category=vegetables'>Vegetables</Link></li>
+                        <li className={`active has-dropdown`}>
+                            <Link href='/products'>Bulk</Link>
+                            <ul className="submenu">
+                                <li><Link href='/products?category=spices'>Spices</Link></li>
+                                <li><Link href='/products?category=nuts'>Nuts</Link></li>
+                                <li><Link href='/products?category=millets'>Millets</Link></li>
+                                <li><Link href='/products?category=herbs'>Herbs</Link></li>
+                            </ul>
+                        </li>
+                        <li className={`active has-dropdown`}>
+                            <Link href='/products'>Retail</Link>
+                            <ul className="submenu">
+                                <li><Link href='/products?category=o2c'>O2C</Link></li>
+                                <li><Link href='/products?category=fruits'>Fruits</Link></li>
+                                <li><Link href='/products?category=vegetables'>Vegetables</Link></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 {nav_menus_list2?.map((item, index) => {
@@ -79,6 +93,9 @@ const NavMenu = () => {
                         </li>
                     )
                 })}
+                <li className={`active`}>
+                    <Link href='/what-new'>What&apos;s New</Link>
+                </li>
 
             </ul>
         </>

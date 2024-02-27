@@ -88,18 +88,48 @@ const MobileMenu = () => {
           onClick={() => handleMenuToggle(8)}
           className={`${submenuOpen === 8 && open === true ? "menu-item-has-children has-droupdown active" : "menu-item-has-children has-droupdown"}`}
         >
-          <Link href='/products'>Retail</Link>
+          <Link href='/products'>B2B</Link>
           <ul
             className={`sub-menu ${submenuOpen === 8 && open === true ? "active" : ""}`}
           >
-            <li>
-              <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=o2c'>O2C</Link>
+            <li
+              className={`${submenuOpen === 8 && open === true ? "menu-item-has-children has-droupdown active" : "menu-item-has-children has-droupdown"}`}
+            >
+              <Link href='/products'>Bulk</Link>
+              <ul
+                className={`sub-menu ${submenuOpen === 8 && open === true ? "active" : ""}`}
+              >
+                <li>
+                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=spices'>Spices</Link>
+                </li>
+                <li>
+                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=nuts'>Nuts</Link>
+                </li>
+                <li>
+                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=millets'>Millets</Link>
+                </li>
+                <li>
+                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=herbs'>Herbs</Link>
+                </li>
+              </ul>
             </li>
-            <li>
-              <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=vegetables'>Vegetables</Link>
-            </li>
-            <li>
-              <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=fruits'>Fruits</Link>
+            <li
+              className={`${submenuOpen === 8 && open === true ? "menu-item-has-children has-droupdown active" : "menu-item-has-children has-droupdown"}`}
+            >
+              <Link href='/products'>Retail</Link>
+              <ul
+                className={`sub-menu ${submenuOpen === 8 && open === true ? "active" : ""}`}
+              >
+                <li>
+                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=o2c'>O2C</Link>
+                </li>
+                <li>
+                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=vegetables'>Vegetables</Link>
+                </li>
+                <li>
+                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=fruits'>Fruits</Link>
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
@@ -127,6 +157,9 @@ const MobileMenu = () => {
             )}
           </li>
         ))}
+        <li>
+          <Link onClick={() => safeSetShowSidebar(false)} href='/what-new'>What&apos;s New</Link>
+        </li>
         
       </ul>
     </>
