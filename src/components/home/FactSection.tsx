@@ -19,7 +19,7 @@ const CounterItem = [
         id: 3,
         number: 3800,
         numberLetter: '',
-        title: 'Hectors of Area under Organic agriculture',
+        title: 'Hectares of Area under Organic agriculture',
     },
     {
         id: 4,

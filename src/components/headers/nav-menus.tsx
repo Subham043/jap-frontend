@@ -13,10 +13,10 @@ interface NavMenuItem {
 }
 
 const nav_menus_list:NavMenuItem[] = [
-  {id:1,
-    link: '/',
-    title: 'Home',
-  },
+  // {id:1,
+  //   link: '/',
+  //   title: 'Home',
+  // },
   {id:2,
     link: '/about',
     title: 'About Us',
