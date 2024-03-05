@@ -27,17 +27,17 @@ const WhatNewSection = () => {
                                     <Slider {...settings}>
                                         <div>
                                             <div className="bd-banner__image-2">
-                                                <Image width={1280} height={420} priority={true} src={`/assets/img/new/1.jpeg`} placeholder="blur" blurDataURL={`/assets/img/new/1.jpeg`} alt="banner-img" />
+                                                <Image width={1280} height={576} priority={true} src={`/assets/img/new/1.jpeg`} placeholder="blur" blurDataURL={`/assets/img/new/1.jpeg`} alt="banner-img" />
                                             </div>
                                         </div>
                                         <div>
                                             <div className="bd-banner__image-2">
-                                            <Image width={1280} height={420} priority={false} src={`/assets/img/new/2.jpeg`} placeholder="blur" blurDataURL={`/assets/img/new/2.jpeg`} alt="banner-img" />
+                                            <Image width={1280} height={576} priority={false} src={`/assets/img/new/2.jpeg`} placeholder="blur" blurDataURL={`/assets/img/new/2.jpeg`} alt="banner-img" />
                                             </div>
                                         </div>
                                         <div>
                                             <div className="bd-banner__image-2">
-                                            <Image width={1280} height={420} priority={false} src={`/assets/img/new/3.jpeg`} placeholder="blur" blurDataURL={`/assets/img/new/3.jpeg`}  alt="banner-img" />
+                                            <Image width={1280} height={576} priority={false} src={`/assets/img/new/3.jpeg`} placeholder="blur" blurDataURL={`/assets/img/new/3.jpeg`}  alt="banner-img" />
                                             </div>
                                         </div>
                                     </Slider>

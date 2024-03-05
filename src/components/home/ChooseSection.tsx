@@ -44,7 +44,7 @@ const ChooseSection = () => {
                 style={{ width: "100%", height: "auto" }}
               />
             </button>
-            <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=pulses')}>
+            <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=cereals')}>
               <Image
                 src={thumb4}
                 alt="choose-big"
@@ -72,7 +72,7 @@ const ChooseSection = () => {
                   style={{ width: "100%", height: "auto" }}
                 />
               </button>
-              <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=spices')}>
+              <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=organic-eggs')}>
                 <Image
                   src={thumb6}
                   alt="choose-big"

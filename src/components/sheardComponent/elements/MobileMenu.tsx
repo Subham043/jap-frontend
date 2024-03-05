@@ -91,7 +91,7 @@ const MobileMenu = () => {
               <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=nuts'>Nuts</Link>
             </li>
             <li>
-              <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=millets'>Millets</Link>
+              <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=organic-millets'>Millets</Link>
             </li>
             <li>
               <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=herbs'>Herbs</Link>
@@ -124,7 +124,7 @@ const MobileMenu = () => {
                   <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=nuts'>Nuts</Link>
                 </li>
                 <li>
-                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=millets'>Millets</Link>
+                  <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=organic-millets'>Millets</Link>
                 </li>
                 <li>
                   <Link onClick={() => safeSetShowSidebar(false)} href='/products?category=herbs'>Herbs</Link>
