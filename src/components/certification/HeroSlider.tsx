@@ -82,10 +82,10 @@ const HeroSlider = () => {
                     <div className="certification-slider-text-container h-100">
                         <h3>List of Certificates</h3>
                         <ul>
-                            <li>Organic certification for Crops as per National Organic Program (NOP, USDA)</li>
+                            {/* <li>Organic certification for Crops as per National Organic Program (NOP, USDA)</li> */}
                             <li>Organic Certification for Production as per India’s National Programme for Organic Production Standards (considered equivalent to Council Regulation (EC) #834/2007 and Swiss Organic Farming)</li>
-                            <li>Certificate of Compliance as per EU standard (EC #834/2007 and EC #889/2008)</li>
-                            <li>Organic Handling/Trading Certificate as per National Organic Program (NOP, USDA)</li>
+                            {/* <li>Certificate of Compliance as per EU standard (EC #834/2007 and EC #889/2008)</li> */}
+                            {/* <li>Organic Handling/Trading Certificate as per National Organic Program (NOP, USDA)</li> */}
                             <li>Registration-Cum-Membership Certificate from APEDA (Agricultural and Processed Food Products Export Development Authority), Ministry of Commerce and Industry, Govt. of India</li>
                             <li>Certificate of Registration as Exporter from Spice Board, Ministry of Commerce and Industry, Govt. of India</li>
                             <li>FSSAI Licence (Food Safety and Standards Authority of India)</li>

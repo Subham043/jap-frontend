@@ -32,7 +32,7 @@ const  ProductSlider = ({title, segment}:Props) => {
           <div className="row align-items-center">
             <div className="col-xl-12 col-lg-12">
               <div className="bd-section__title-wrapper mb-60 text-center">
-                <span className="bd-sub__title">Organic Products</span>
+                {/* <span className="bd-sub__title">Organic Products</span> */}
                 <h2 className="bd-section__title mb-30">{title}</h2>
               </div>
             </div>

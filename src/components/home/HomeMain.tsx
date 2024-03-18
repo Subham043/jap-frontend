@@ -15,7 +15,7 @@ const HomeMain = () => {
             {/* <ServiceSection/> */}
             <ProductSlider title='Our Bulk Offers' segment='is_featured'/>
             <ChooseSection/>
-            <ProductSlider title='Our Bulk Offers' segment='is_new_arrival'/>
+            <ProductSlider title='Our Retail Offerings' segment='is_new_arrival'/>
             <FactSection/>
             {/* <ProductSlider title='On Sale Products' segment='is_best_sale'/> */}
         </>
