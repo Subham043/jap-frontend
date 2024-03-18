@@ -65,6 +65,9 @@
 			position: absolute;
 			left: 0;
 			bottom: 0;
+			@media #{$xs, $xxs, $sm}{
+				bottom: -25px;
+			}
 			&>img{
 				@media #{$xs, $xxs, $sm}{
 					height: 300px !important;
@@ -76,6 +79,9 @@
 			position: absolute;
 			right: 0;
 			top: 75px;
+			@media #{$xs, $xxs, $sm}{
+				top: 100px;
+			}
 			&>img{
 				@media #{$xs, $xxs, $sm}{
 					height: 300px !important;

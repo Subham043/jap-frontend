@@ -1,9 +1,11 @@
 import React from "react";
 // import thumb1 from "../../../public/assets/img/about/about-big-shape.png";
 import thumb2 from "../../../public/assets/img/about/about-icon.png";
-import thumb3 from "../../../public/assets/img/gallery/53.jpeg";
+// import thumb3 from "../../../public/assets/img/gallery/53.jpeg";
 // import thumb4 from "../../../public/assets/img/about/about-img-11.jpg";
-import thumb4 from "../../../public/assets/img/gallery/98.jpeg";
+// import thumb4 from "../../../public/assets/img/gallery/98.jpeg";
+import thumb4 from "../../../public/assets/img/new/farmer-2.jpg";
+import thumb3 from "../../../public/assets/img/new/farmer-4.jpg";
 // import thumb5 from "../../../public/assets/img/about/about-shape-1.png";
 import Image from "next/image";
 const AboutSection = () => {
@@ -54,7 +56,7 @@ const AboutSection = () => {
                   width={330}
                   height={430}
                   alt="about-img"
-                  style={{ width: "330px", height: "auto" }}
+                  style={{ width: "330px", height: "auto", objectPosition: "right" }}
                 />
               </div>
               <div className="bd-about__thumb-2">
