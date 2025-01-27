@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ImageViewer from 'react-simple-image-viewer';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';

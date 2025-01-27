@@ -9,7 +9,7 @@ const HeaderTopTwo = () => {
                     <div className="col-xxl-6 col-xl-6 col-md-8">
                         <div className="bd-topbar__contact">
                             <ul>
-                                <li><Link href="tel:+919207300055"><i className="fa-regular fa-phone-flip"></i>+91-9207300055</Link></li>
+                                <li><Link href="tel:+919620306991"><i className="fa-regular fa-phone-flip"></i>+91-9620306991</Link></li>
                                 <li><Link href="mailto:operations@jap.bio"><i className="fa-regular fa-envelope"></i>operations@jap.bio</Link></li>
                             </ul>
                         </div>

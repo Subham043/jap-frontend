@@ -113,7 +113,7 @@ const Footer = () => {
                   <div className="bd-footer__support-inner">
                     {/* <span>8:30 AM - 9:30 PM</span> */}
                     <h4>
-                      <Link href="tel:+919207300055">+91-9207300055</Link>
+                      <Link href="tel:+919620306991">+91-9620306991</Link>
                     </h4>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <a href="https://wa.me/9207300055" className="whatsapp_float" target="_blank" rel="noopener noreferrer"> <i className="fab fa-whatsapp whatsapp-icon"></i></a>
+      <a href="https://wa.me/9620306991" className="whatsapp_float" target="_blank" rel="noopener noreferrer"> <i className="fab fa-whatsapp whatsapp-icon"></i></a>
     </footer>
   );
 };

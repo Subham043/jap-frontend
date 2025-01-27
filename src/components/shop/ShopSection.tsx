@@ -35,7 +35,6 @@ const ShopSection = () => {
       if (previousPageData && previousPageData.length===0) return null;
       return `${api_routes.products}?total=${PAGE_SIZE}&page=${pageIndex+1}&sort=-id${searchValue ? '&filter[search]='+searchValue : ''}${segment.length>0 ? segment : ''}${categorySelected && categorySelected.length>0 ? '&filter[has_categories]='+categorySelected : ''}${ratingSelected}`;
   }, [searchValue, segment, categorySelected, ratingSelected])
-  
   const {
         data,
         size:productSize,

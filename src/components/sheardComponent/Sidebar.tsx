@@ -79,7 +79,7 @@ const Sidebar = () => {
                           <i className="far fa-phone"></i>
                         </div>
                         <div className="offcanvas__contact-text">
-                          <Link href="tel:+91-9207300055">+91-9207300055 </Link>
+                          <Link href="tel:+919620306991">+91-9620306991 </Link>
                         </div>
                       </li>
                       <li className="d-flex align-items-center">

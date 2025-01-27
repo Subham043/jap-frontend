@@ -376,9 +376,15 @@ const B2bForm = () => {
                             <h4>Phone</h4>
                           </div>
                           <span>
-                            Mobile :
-                            <a href="tel:+919207300055">
-                              <span>+91-9207300055</span>
+                            Retail :
+                            <a href="tel:+919620306991">
+                              <span>+91-9620306991</span>
+                            </a>
+                          </span>
+                          <span>
+                            B2B :
+                            <a href="tel:+919961913330">
+                              <span>+91-9961913330</span>
                             </a>
                           </span>
                         </div>

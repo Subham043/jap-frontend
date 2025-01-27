@@ -175,8 +175,8 @@ const ContactForm = () => {
                           </div>
                           <span>
                             Mobile :
-                            <a href="tel:+919207300055">
-                              <span>+91-9207300055</span>
+                            <a href="tel:+919620306991">
+                              <span>+91-9620306991</span>
                             </a>
                           </span>
                         </div>
