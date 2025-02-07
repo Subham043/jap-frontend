@@ -4,6 +4,7 @@ import thumbTwo from "../../../public/assets/img/certification/PGS.jpg";
 import thumbThree from "../../../public/assets/img/certification/NPOP.jpeg";
 import thumbFour from "../../../public/assets/img/certification/USDA.jpeg";
 import Image from "next/image";
+import NpopSlider from "./NpopSlider";
 const CertificationSection = () => {
   
   return (
@@ -80,6 +81,15 @@ const CertificationSection = () => {
               </div>
             </div>
           </div>
+          {/* <div className="col-xxl-12 col-xl-12 col-lg-12">
+            <div className="bd-about__content-box">
+              <div className="bd-about__inner">
+                <div className="bd-about__info">
+                  <NpopSlider/>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </div>
         {/* <div className="row align-items-center">
           <div className="col-xxl-4 col-xl-4 col-lg-4">

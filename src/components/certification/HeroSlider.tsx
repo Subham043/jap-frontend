@@ -1,9 +1,9 @@
-const thumbOne = "/assets/img/certification/fssai-cert.webp"
-const thumb2 = "/assets/img/certification/fssai-2.webp"
-const thumb3 = "/assets/img/certification/fssai-3.webp"
-const thumb4 = "/assets/img/certification/fssai-4.webp"
-const thumb5 = "/assets/img/certification/fssai-5.webp"
-const thumb6 = "/assets/img/certification/fssai-6.webp"
+// const thumbOne = "/assets/img/certification/fssai-cert.webp"
+// const thumb2 = "/assets/img/certification/fssai-2.webp"
+// const thumb3 = "/assets/img/certification/fssai-3.webp"
+// const thumb4 = "/assets/img/certification/fssai-4.webp"
+// const thumb5 = "/assets/img/certification/fssai-5.webp"
+// const thumb6 = "/assets/img/certification/fssai-6.webp"
 const thumbTow = "/assets/img/certification/pgs-cert.webp"
 const thumb7 = "/assets/img/certification/pgs-2.webp"
 const thumb8 = "/assets/img/certification/pgs-3.webp"
@@ -37,12 +37,12 @@ const HeroSlider = () => {
                         <div className="bd-banner__active  swiper-container h-100">
                             <div className="swiper-wrappers h-100">
                                 <Slider {...settings}>
-                                    <div className="h-100">
+                                    {/* <div className="h-100">
                                         <div className="bd-banner__image-2 h-100">
                                             <Image width={1280} height={420} priority={true} src={thumbOne} placeholder="blur" blurDataURL={thumbOne} alt="banner-img" />
                                         </div>
-                                    </div>
-                                    <div className="h-100">
+                                    </div> */}
+                                    {/* <div className="h-100">
                                         <div className="bd-banner__image-2 h-100">
                                             <Image width={1280} height={420} priority={true} src={thumb2} placeholder="blur" blurDataURL={thumbOne} alt="banner-img" />
                                         </div>
@@ -65,6 +65,11 @@ const HeroSlider = () => {
                                     <div className="h-100">
                                         <div className="bd-banner__image-2 h-100">
                                             <Image width={1280} height={420} priority={true} src={thumb6} placeholder="blur" blurDataURL={thumbOne} alt="banner-img" />
+                                        </div>
+                                    </div> */}
+                                    <div className="h-100">
+                                        <div className="bd-banner__image-2 h-100">
+                                        <Image width={1280} height={420} priority={false} src={thumb11} placeholder="blur" blurDataURL={thumbTow} alt="banner-img" />
                                         </div>
                                     </div>
                                     <div className="h-100">
@@ -94,11 +99,6 @@ const HeroSlider = () => {
                                     </div>
                                     <div className="h-100">
                                         <div className="bd-banner__image-2 h-100">
-                                        <Image width={1280} height={420} priority={false} src={thumb11} placeholder="blur" blurDataURL={thumbTow} alt="banner-img" />
-                                        </div>
-                                    </div>
-                                    <div className="h-100">
-                                        <div className="bd-banner__image-2 h-100">
                                         <Image width={1280} height={420} priority={false} src={thumb12} placeholder="blur" blurDataURL={thumbTow} alt="banner-img" />
                                         </div>
                                     </div>
@@ -120,6 +120,11 @@ const HeroSlider = () => {
                                     <div className="h-100">
                                         <div className="bd-banner__image-2 h-100">
                                         <Image width={1280} height={420} priority={false} src={thumb16} placeholder="blur" blurDataURL={thumbTow} alt="banner-img" />
+                                        </div>
+                                    </div>
+                                    <div className="h-100">
+                                        <div className="bd-banner__image-2 h-100">
+                                        <Image width={1280} height={420} priority={false} src={thumb17} placeholder="blur" blurDataURL={thumbTow} alt="banner-img" />
                                         </div>
                                     </div>
                                 </Slider>

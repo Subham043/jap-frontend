@@ -8,10 +8,11 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 const PAGE_SIZE = 20;
 
 type Props = {
+  categorySelected: string;
   setCategorySelected: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const ShopSidebarCategories = ({setCategorySelected}:Props) => {
+const ShopSidebarCategories = ({categorySelected, setCategorySelected}:Props) => {
   
   const categoryFetcher = async (url: string) => {
     const res =await axiosPublic.get(url);
@@ -63,6 +64,7 @@ const ShopSidebarCategories = ({setCategorySelected}:Props) => {
                   id="view-all-1"
                   name="category"
                   value=''
+                  checked={categorySelected===''}
                   onChange={(e)=>setCategorySelected(e.target.value)}
                 />
                 <label className="radio-star" htmlFor="view-all-1">
@@ -84,6 +86,7 @@ const ShopSidebarCategories = ({setCategorySelected}:Props) => {
                       id={item.slug}
                       name="category"
                       value={`${item.slug}`}
+                      checked={categorySelected===item.slug}
                       onChange={(e)=>setCategorySelected(e.target.value)}
                     />
                     <label className="radio-star" htmlFor={item.slug}>

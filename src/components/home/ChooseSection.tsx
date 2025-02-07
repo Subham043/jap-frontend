@@ -26,7 +26,7 @@ const ChooseSection = () => {
         </div>
         <div className="row g-0 align-items-center justify-content-center">
           <div className="col-xl-5 col-lg-5 col-md-12 d-flex flex-wrap p-relative">
-            <button className="bd-choose__thumb text-center w-50 p-relative about-category-btn" onClick={()=>route.push('/products?category=pulses')}>
+            <button className="bd-choose__thumb text-center w-50 p-relative about-category-btn" onClick={()=>route.push('/products?category=oil-seeds-pulses-others')}>
               <Image
                 src={thumb1}
                 alt="choose-big"
@@ -44,7 +44,7 @@ const ChooseSection = () => {
                 style={{ width: "100%", height: "auto" }}
               />
             </button>
-            <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=cereals')}>
+            <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=oil-seeds-pulses-others')}>
               <Image
                 src={thumb4}
                 alt="choose-big"
@@ -72,7 +72,7 @@ const ChooseSection = () => {
                   style={{ width: "100%", height: "auto" }}
                 />
               </button>
-              <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=organic-eggs')}>
+              <button className="bd-choose__thumb text-center w-50 about-category-btn" onClick={()=>route.push('/products?category=millets')}>
                 <Image
                   src={thumb6}
                   alt="choose-big"

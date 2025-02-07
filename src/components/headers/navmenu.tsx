@@ -59,9 +59,9 @@ const NavMenu = () => {
                     <Link href='/products'>Exports</Link>
                     <ul className="submenu">
                         <li><Link href='/products?category=spices'>Spices</Link></li>
-                        <li><Link href='/products?category=nuts'>Nuts</Link></li>
-                        <li><Link href='/products?category=organic-millets'>Millets</Link></li>
-                        <li><Link href='/products?category=herbs'>Herbs</Link></li>
+                        <li><Link href='/products?category=oil-seeds-pulses-others'>Nuts</Link></li>
+                        <li><Link href='/products?category=millets'>Millets</Link></li>
+                        <li><Link href='/products?category=herbs-medicinal-plants-beverages'>Herbs</Link></li>
                         {/* {
                             categoryData?.flat().map((item, index) => (item.name!=='O2C' && item.name!=='o2c' && item.name!=='Fruits' && item.name!=='fruits' && item.name!=='Vegetables' && item.name!=='vegetables') && <li key={index}><Link href={`/products?category=${item.slug}`}>{item.name}</Link></li>)
                         } */}
@@ -74,9 +74,9 @@ const NavMenu = () => {
                             <Link href='/products'>Bulk</Link>
                             <ul className="submenu">
                                 <li><Link href='/products?category=spices'>Spices</Link></li>
-                                <li><Link href='/products?category=nuts'>Nuts</Link></li>
-                                <li><Link href='/products?category=organic-millets'>Millets</Link></li>
-                                <li><Link href='/products?category=herbs'>Herbs</Link></li>
+                                <li><Link href='/products?category=oil-seeds-pulses-others'>Nuts</Link></li>
+                                <li><Link href='/products?category=millets'>Millets</Link></li>
+                                <li><Link href='/products?category=herbs-medicinal-plants-beverages'>Herbs</Link></li>
                             </ul>
                         </li>
                         <li className={`active has-dropdown`}>

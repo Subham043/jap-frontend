@@ -12,6 +12,10 @@ import { api_routes } from "@/helper/routes";
 import {debounce} from "lodash";
 import { segments } from "@/helper/constants";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
+import ExportSlider from "./ExportSlider";
+
+const export1 = "/assets/img/product/exports/1.jpg"
 
 const PAGE_SIZE = 20;
 
@@ -62,13 +66,16 @@ const ShopSection = () => {
             <div className="col-xxl-3 col-xl-4 col-lg-4">
               <div className="bd-sidebar__widget-warpper mb-60">
                 <div className="bd-product__filters">
-                  <ShopSidebarCategories setCategorySelected={setCategorySelected} />
+                  <ShopSidebarCategories categorySelected={categorySelected} setCategorySelected={setCategorySelected} />
                   <ShopSidebarRetting setRatingSelected={setRatingSelected} />
                 </div>
               </div>
             </div>
             <div className="col-xxl-9 col-xl-8 col-lg-8">
               <div className="row justify-content-between">
+                <div className="col-xl-12 col-sm-12">
+                  <ExportSlider category={categorySelected} />
+                </div>
                 <div className="col-xl-4">
                   <div className="bd-top__filter-search p-relative mb-30">
                     <form className="bd-top__filter-input" action="#">
