@@ -174,9 +174,15 @@ const ContactForm = () => {
                             <h4>Phone</h4>
                           </div>
                           <span>
-                            Mobile :
+                            Retail :
                             <a href="tel:+919620306991">
                               <span>+91-9620306991</span>
+                            </a>
+                          </span>
+                          <span>
+                            B2B :
+                            <a href="tel:+919961913330">
+                              <span>+91-9961913330</span>
                             </a>
                           </span>
                         </div>
@@ -192,8 +198,15 @@ const ContactForm = () => {
                             <h4>Email</h4>
                           </div>
                           <span>
+                            Retail :
                             <a href="mailto:operations@jap.bio">
                               operations@jap.bio
+                            </a>
+                          </span>
+                          <span>
+                            B2B :
+                            <a href="mailto:info@jap.bio">
+                              info@jap.bio
                             </a>
                           </span>
                         </div>

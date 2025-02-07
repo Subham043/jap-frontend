@@ -400,8 +400,15 @@ const B2bForm = () => {
                             <h4>Email</h4>
                           </div>
                           <span>
+                            Retail :
                             <a href="mailto:operations@jap.bio">
                               operations@jap.bio
+                            </a>
+                          </span>
+                          <span>
+                            B2B :
+                            <a href="mailto:info@jap.bio">
+                              info@jap.bio
                             </a>
                           </span>
                         </div>
