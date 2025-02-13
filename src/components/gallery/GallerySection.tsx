@@ -8,6 +8,7 @@ import { api_routes } from "@/helper/routes";
 import { GalleryCategoryState, GalleryState } from "@/helper/types";
 import useSWRInfinite from "swr/infinite";
 import useSWR from "swr";
+import ExportSlider from "../shop/ExportSlider";
 
 const galleryFetcher = async (url: string) => {
   const res =await axiosPublic.get(url);
@@ -128,6 +129,7 @@ const GallerySection = () => {
                     />
                 )}
             </div>
+            <ExportSlider category='' />
         </section>
     );
 };

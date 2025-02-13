@@ -1,15 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-const thumbTow = "/assets/img/product/exports/1.jpg"
-const thumb7 = "/assets/img/product/exports/2.jpg"
-const thumb8 = "/assets/img/product/exports/3.jpg"
-const thumb9 = "/assets/img/product/exports/4.jpg"
-const thumb10 = "/assets/img/product/exports/5.jpg"
-const thumb11 = "/assets/img/product/exports/6.jpg"
-const thumb12 = "/assets/img/product/exports/7.jpg"
-const thumb13 = "/assets/img/product/exports/9.jpg"
-const thumb14 = "/assets/img/product/exports/10.jpg"
-const thumb15 = "/assets/img/product/exports/8.jpg"
-import Image from "next/image";
+const thumbTow = "/assets/img/product/exports/spices-1.jpg"
+const thumb7 = "/assets/img/product/exports/spices-2.jpg"
+const thumb8 = "/assets/img/product/exports/spices-3.jpg"
+const thumb11 = "/assets/img/product/exports/millets-1.jpg"
+const thumb12 = "/assets/img/product/exports/millets-2.jpg"
+const thumb13 = "/assets/img/product/exports/herbs-1.jpg"
+const thumb14 = "/assets/img/product/exports/pulses-1.jpg"
+const thumb15 = "/assets/img/product/exports/fruits-1.jpg"
+// import Image from "next/image";
 import Slider from "react-slick";
 
 const settings = {
@@ -38,16 +36,6 @@ const exportImages = [
         img: thumb8
     },
     {
-        id: 4,
-        category: ['', 'spices'],
-        img: thumb9
-    },
-    {
-        id: 5,
-        category: ['', 'spices', 'millets'],
-        img: thumb10
-    },
-    {
         id: 6,
         category: ['', 'millets'],
         img: thumb11
@@ -64,12 +52,12 @@ const exportImages = [
     },
     {
         id: 9,
-        category: ['', 'herbs-medicinal-plants-beverages', 'vegetables', 'oil-seeds-pulses-others'],
+        category: ['', 'oil-seeds-pulses-others'],
         img: thumb14
     },
     {
         id: 10,
-        category: ['', 'herbs-medicinal-plants-beverages', 'vegetables', 'oil-seeds-pulses-others'],
+        category: ['', 'fruits'],
         img: thumb15
     },
 ];
